@@ -1,0 +1,69 @@
+{
+  "version": "blind-synthetic-benchmark/1.0",
+  "truth": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "events": [
+        {
+          "md_interval_m": [
+            2490,
+            2500
+          ],
+          "severity": "SEVERE"
+        }
+      ],
+      "case_kind": "loss"
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "events": [
+        {
+          "md_interval_m": [
+            2490,
+            2500
+          ],
+          "severity": "SEVERE"
+        }
+      ],
+      "case_kind": "loss"
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "events": [],
+      "case_kind": "negative"
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "events": [],
+      "case_kind": "transient"
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "events": [],
+      "case_kind": "sensor_fault"
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "events": [],
+      "case_kind": "similar_signals_negative"
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "events": [
+        {
+          "md_interval_m": [
+            2490,
+            2500
+          ],
+          "severity": "SEVERE"
+        }
+      ],
+      "case_kind": "loss_stale"
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "events": [],
+      "case_kind": "quiet_negative"
+    }
+  ]
+}

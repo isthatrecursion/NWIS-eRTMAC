@@ -1,0 +1,5301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "Measurement": {
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "original_value": {
+          "title": "Original Value",
+          "type": "number"
+        },
+        "original_unit": {
+          "title": "Original Unit",
+          "type": "string"
+        },
+        "datum": {
+          "default": "UNKNOWN",
+          "title": "Datum",
+          "type": "string"
+        },
+        "reference": {
+          "default": "UNKNOWN",
+          "title": "Reference",
+          "type": "string"
+        },
+        "source": {
+          "default": "UNKNOWN",
+          "title": "Source",
+          "type": "string"
+        },
+        "algorithm_version": {
+          "default": "units/1.0",
+          "title": "Algorithm Version",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Synthetic Flag"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "original_value",
+        "original_unit"
+      ],
+      "title": "Measurement",
+      "type": "object"
+    },
+    "SourceRef": {
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "span_id": {
+          "title": "Span Id",
+          "type": "string"
+        },
+        "excerpt": {
+          "title": "Excerpt",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "page",
+        "span_id",
+        "excerpt"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "ProvenanceType": {
+      "enum": [
+        "FACT",
+        "COMPUTED",
+        "INFERRED"
+      ],
+      "title": "ProvenanceType",
+      "type": "string"
+    },
+    "ProvenanceItem": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/ProvenanceType"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "algorithm_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Algorithm Version"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "label",
+        "value"
+      ],
+      "title": "ProvenanceItem",
+      "type": "object"
+    },
+    "FormationInterval": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "top_md_m": {
+          "description": "Canonical metres",
+          "title": "Top Md M",
+          "type": "number"
+        },
+        "base_md_m": {
+          "description": "Canonical metres",
+          "title": "Base Md M",
+          "type": "number"
+        },
+        "uncertainty_m": {
+          "minimum": 0,
+          "title": "Uncertainty M",
+          "type": "number"
+        },
+        "color": {
+          "title": "Color",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "top_md_m",
+        "base_md_m",
+        "uncertainty_m",
+        "color"
+      ],
+      "title": "FormationInterval",
+      "type": "object"
+    },
+    "WellSummary": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "latitude": {
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "title": "Longitude",
+          "type": "number"
+        },
+        "surface_x_km": {
+          "title": "Surface X Km",
+          "type": "number"
+        },
+        "surface_y_km": {
+          "title": "Surface Y Km",
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "ACTIVE",
+            "OFFSET"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "synthetic": {
+          "default": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "field",
+        "latitude",
+        "longitude",
+        "surface_x_km",
+        "surface_y_km",
+        "status"
+      ],
+      "title": "WellSummary",
+      "type": "object"
+    },
+    "Freshness": {
+      "enum": [
+        "FRESH",
+        "STALE",
+        "MISSING",
+        "SUSPECT"
+      ],
+      "title": "Freshness",
+      "type": "string"
+    },
+    "ChannelValue": {
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Timestamp"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "quality_status": {
+          "$ref": "#/$defs/Freshness"
+        },
+        "age_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Age S"
+        },
+        "freshness_threshold_s": {
+          "default": 30,
+          "exclusiveMinimum": 0,
+          "title": "Freshness Threshold S",
+          "type": "number"
+        },
+        "provenance_type": {
+          "$ref": "#/$defs/ProvenanceType",
+          "default": "FACT"
+        },
+        "measurement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Measurement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "timestamp",
+        "source",
+        "quality_status"
+      ],
+      "title": "ChannelValue",
+      "type": "object"
+    },
+    "ContextHistory": {
+      "additionalProperties": true,
+      "properties": {
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "values": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Values",
+          "type": "object"
+        },
+        "quality_status": {
+          "default": "VALID",
+          "enum": [
+            "VALID",
+            "SUSPECT",
+            "MISSING"
+          ],
+          "title": "Quality Status",
+          "type": "string"
+        },
+        "channel_timestamps": {
+          "additionalProperties": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "title": "Channel Timestamps",
+          "type": "object"
+        },
+        "channel_quality": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Channel Quality",
+          "type": "object"
+        }
+      },
+      "required": [
+        "timestamp",
+        "values"
+      ],
+      "title": "ContextHistory",
+      "type": "object"
+    },
+    "FormationUncertainty": {
+      "properties": {
+        "status": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "CONFIGURED",
+            "BOUNDARY_OVERLAP"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "candidate_formation_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Formation Ids",
+          "type": "array"
+        },
+        "boundary_overlap": {
+          "default": false,
+          "title": "Boundary Overlap",
+          "type": "boolean"
+        },
+        "current_uncertainty_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Current Uncertainty M"
+        },
+        "next_top_interval_m": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Top Interval M"
+        }
+      },
+      "title": "FormationUncertainty",
+      "type": "object"
+    },
+    "OperationState": {
+      "enum": [
+        "TRIPPING",
+        "DRILLING",
+        "REAMING",
+        "CIRCULATING",
+        "CONNECTION",
+        "TRIPPING_IN",
+        "TRIPPING_OUT",
+        "CEMENTING",
+        "LOGGING",
+        "STATIC",
+        "UNKNOWN"
+      ],
+      "title": "OperationState",
+      "type": "string"
+    },
+    "CurrentWellContext": {
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "bit_md_m": {
+          "anyOf": [
+            {
+              "description": "Canonical metres",
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Bit Md M"
+        },
+        "hole_md_m": {
+          "anyOf": [
+            {
+              "description": "Canonical metres",
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hole Md M"
+        },
+        "tvd_m": {
+          "anyOf": [
+            {
+              "description": "Canonical metres",
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Tvd M"
+        },
+        "formation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Formation Id"
+        },
+        "next_formation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Next Formation Id"
+        },
+        "distance_to_next_top_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Distance To Next Top M"
+        },
+        "formation_uncertainty": {
+          "$ref": "#/$defs/FormationUncertainty"
+        },
+        "hole_section_in": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hole Section In"
+        },
+        "inclination_deg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Inclination Deg"
+        },
+        "operation_state": {
+          "$ref": "#/$defs/OperationState"
+        },
+        "channels": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ChannelValue"
+          },
+          "title": "Channels",
+          "type": "object"
+        },
+        "context_conflict": {
+          "default": false,
+          "title": "Context Conflict",
+          "type": "boolean"
+        },
+        "source": {
+          "default": "UNKNOWN",
+          "title": "Source",
+          "type": "string"
+        },
+        "clock": {
+          "default": "UTC",
+          "title": "Clock",
+          "type": "string"
+        },
+        "simulation": {
+          "default": true,
+          "title": "Simulation",
+          "type": "boolean"
+        },
+        "conflicts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "algorithm_version": {
+          "default": "current-context/1.0",
+          "title": "Algorithm Version",
+          "type": "string"
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/ContextHistory"
+          },
+          "title": "History",
+          "type": "array"
+        }
+      },
+      "required": [
+        "well_id",
+        "timestamp",
+        "bit_md_m",
+        "hole_md_m",
+        "tvd_m",
+        "formation_id",
+        "next_formation_id",
+        "hole_section_in",
+        "inclination_deg",
+        "operation_state",
+        "channels"
+      ],
+      "title": "CurrentWellContext",
+      "type": "object"
+    },
+    "OffsetAssessment": {
+      "properties": {
+        "well": {
+          "$ref": "#/$defs/WellSummary"
+        },
+        "surface_distance_km": {
+          "title": "Surface Distance Km",
+          "type": "number"
+        },
+        "target_distance_km": {
+          "title": "Target Distance Km",
+          "type": "number"
+        },
+        "relevance": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            "EXCLUDED"
+          ],
+          "title": "Relevance",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "INCLUDED",
+            "PENALIZED",
+            "EXCLUDED"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "support": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "penalties": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Penalties",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "well",
+        "surface_distance_km",
+        "target_distance_km",
+        "relevance",
+        "decision",
+        "support",
+        "penalties",
+        "unknowns"
+      ],
+      "title": "OffsetAssessment",
+      "type": "object"
+    },
+    "CoverageStatus": {
+      "enum": [
+        "VERIFIED",
+        "PROBABLE",
+        "UNKNOWN"
+      ],
+      "title": "CoverageStatus",
+      "type": "string"
+    },
+    "EventType": {
+      "enum": [
+        "MUD_LOSS",
+        "STUCK_PIPE",
+        "KICK",
+        "TORQUE_DYSFUNCTION",
+        "CEMENTING_ISSUE"
+      ],
+      "title": "EventType",
+      "type": "string"
+    },
+    "EvidenceRole": {
+      "enum": [
+        "EXCLUDED",
+        "SUPPORT",
+        "COUNTER",
+        "UNKNOWN"
+      ],
+      "title": "EvidenceRole",
+      "type": "string"
+    },
+    "EvidenceRecord": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/EvidenceRole"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "well_name": {
+          "title": "Well Name",
+          "type": "string"
+        },
+        "event_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EventType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "historical_md_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Historical Md M"
+        },
+        "projected_interval_m": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Projected Interval M",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "coverage": {
+          "$ref": "#/$defs/CoverageStatus"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "well_id",
+        "well_name",
+        "event_type",
+        "formation",
+        "historical_md_m",
+        "projected_interval_m",
+        "summary",
+        "coverage",
+        "source"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    },
+    "EvidenceState": {
+      "enum": [
+        "NO_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "LESSON",
+        "ELEVATED",
+        "WARNING"
+      ],
+      "title": "EvidenceState",
+      "type": "string"
+    },
+    "RiskInterval": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "risk_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "interval_from_m": {
+          "description": "Canonical metres",
+          "title": "Interval From M",
+          "type": "number"
+        },
+        "interval_to_m": {
+          "description": "Canonical metres",
+          "title": "Interval To M",
+          "type": "number"
+        },
+        "uncertainty_m": {
+          "title": "Uncertainty M",
+          "type": "number"
+        },
+        "evidence_state": {
+          "$ref": "#/$defs/EvidenceState"
+        },
+        "evidence_sentence": {
+          "title": "Evidence Sentence",
+          "type": "string"
+        },
+        "support_count": {
+          "title": "Support Count",
+          "type": "integer"
+        },
+        "counter_count": {
+          "title": "Counter Count",
+          "type": "integer"
+        },
+        "unknown_count": {
+          "title": "Unknown Count",
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRecord"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "risk_type",
+        "formation",
+        "interval_from_m",
+        "interval_to_m",
+        "uncertainty_m",
+        "evidence_state",
+        "evidence_sentence",
+        "support_count",
+        "counter_count",
+        "unknown_count",
+        "evidence"
+      ],
+      "title": "RiskInterval",
+      "type": "object"
+    },
+    "AlertLifecycle": {
+      "enum": [
+        "CREATED",
+        "ACKNOWLEDGED",
+        "SNOOZED",
+        "ESCALATED",
+        "RESOLVED"
+      ],
+      "title": "AlertLifecycle",
+      "type": "string"
+    },
+    "Alert": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "risk_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "evidence_state": {
+          "$ref": "#/$defs/EvidenceState"
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/AlertLifecycle"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "interval_from_m": {
+          "description": "Canonical metres",
+          "title": "Interval From M",
+          "type": "number"
+        },
+        "interval_to_m": {
+          "description": "Canonical metres",
+          "title": "Interval To M",
+          "type": "number"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "risk_type",
+        "evidence_state",
+        "lifecycle",
+        "formation",
+        "interval_from_m",
+        "interval_to_m",
+        "title",
+        "message",
+        "created_at"
+      ],
+      "title": "Alert",
+      "type": "object"
+    },
+    "ReviewStatus": {
+      "enum": [
+        "VERIFIED",
+        "AUTO_ACCEPTED",
+        "NEEDS_REVIEW",
+        "QUARANTINED"
+      ],
+      "title": "ReviewStatus",
+      "type": "string"
+    },
+    "DocumentSummary": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "well_name": {
+          "title": "Well Name",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "doc_type": {
+          "enum": [
+            "WCR",
+            "DDR",
+            "MUD_LOG",
+            "CEMENT_REPORT"
+          ],
+          "title": "Doc Type",
+          "type": "string"
+        },
+        "pages": {
+          "title": "Pages",
+          "type": "integer"
+        },
+        "is_scan": {
+          "title": "Is Scan",
+          "type": "boolean"
+        },
+        "ocr_confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ocr Confidence",
+          "type": "number"
+        },
+        "review_status": {
+          "$ref": "#/$defs/ReviewStatus"
+        },
+        "synthetic": {
+          "default": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "well_name",
+        "title",
+        "doc_type",
+        "pages",
+        "is_scan",
+        "ocr_confidence",
+        "review_status"
+      ],
+      "title": "DocumentSummary",
+      "type": "object"
+    },
+    "ReviewItem": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "extracted_value": {
+          "title": "Extracted Value",
+          "type": "string"
+        },
+        "source_excerpt": {
+          "title": "Source Excerpt",
+          "type": "string"
+        },
+        "review_status": {
+          "$ref": "#/$defs/ReviewStatus"
+        }
+      },
+      "required": [
+        "id",
+        "document_id",
+        "priority",
+        "reason",
+        "extracted_value",
+        "source_excerpt",
+        "review_status"
+      ],
+      "title": "ReviewItem",
+      "type": "object"
+    },
+    "ValidationMetric": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "trend": {
+          "title": "Trend",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "value",
+        "trend"
+      ],
+      "title": "ValidationMetric",
+      "type": "object"
+    },
+    "DashboardPayload": {
+      "properties": {
+        "generated_at": {
+          "format": "date-time",
+          "title": "Generated At",
+          "type": "string"
+        },
+        "data_mode": {
+          "default": "API",
+          "enum": [
+            "MOCK",
+            "SYNTHETIC",
+            "API"
+          ],
+          "title": "Data Mode",
+          "type": "string"
+        },
+        "active_well": {
+          "$ref": "#/$defs/WellSummary"
+        },
+        "context": {
+          "$ref": "#/$defs/CurrentWellContext"
+        },
+        "formations": {
+          "items": {
+            "$ref": "#/$defs/FormationInterval"
+          },
+          "title": "Formations",
+          "type": "array"
+        },
+        "offsets": {
+          "items": {
+            "$ref": "#/$defs/OffsetAssessment"
+          },
+          "title": "Offsets",
+          "type": "array"
+        },
+        "risks": {
+          "items": {
+            "$ref": "#/$defs/RiskInterval"
+          },
+          "title": "Risks",
+          "type": "array"
+        },
+        "alerts": {
+          "items": {
+            "$ref": "#/$defs/Alert"
+          },
+          "title": "Alerts",
+          "type": "array"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/ProvenanceItem"
+          },
+          "title": "Provenance",
+          "type": "array"
+        }
+      },
+      "required": [
+        "active_well",
+        "context",
+        "formations",
+        "offsets",
+        "risks",
+        "alerts",
+        "provenance"
+      ],
+      "title": "DashboardPayload",
+      "type": "object"
+    },
+    "RuntimeRecord": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "RuntimeRecord",
+      "type": "object"
+    },
+    "SurveyStation": {
+      "additionalProperties": true,
+      "properties": {
+        "md_m": {
+          "minimum": 0,
+          "title": "Md M",
+          "type": "number"
+        },
+        "incl_deg": {
+          "maximum": 180,
+          "minimum": 0,
+          "title": "Incl Deg",
+          "type": "number"
+        },
+        "azi_deg": {
+          "exclusiveMaximum": 360,
+          "minimum": 0,
+          "title": "Azi Deg",
+          "type": "number"
+        }
+      },
+      "required": [
+        "md_m",
+        "incl_deg",
+        "azi_deg"
+      ],
+      "title": "SurveyStation",
+      "type": "object"
+    },
+    "RuntimeFormation": {
+      "additionalProperties": true,
+      "properties": {
+        "formation_id": {
+          "title": "Formation Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "top_md_m": {
+          "minimum": 0,
+          "title": "Top Md M",
+          "type": "number"
+        },
+        "base_md_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Base Md M"
+        },
+        "uncertainty_m": {
+          "minimum": 0,
+          "title": "Uncertainty M",
+          "type": "number"
+        },
+        "datum": {
+          "title": "Datum",
+          "type": "string"
+        }
+      },
+      "required": [
+        "formation_id",
+        "name",
+        "top_md_m",
+        "base_md_m",
+        "uncertainty_m",
+        "datum"
+      ],
+      "title": "RuntimeFormation",
+      "type": "object"
+    },
+    "MudProgramme": {
+      "additionalProperties": true,
+      "properties": {
+        "mud_system": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mud System"
+        },
+        "ecd_sg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ecd Sg"
+        },
+        "hole_section_in": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hole Section In"
+        },
+        "mud_weight_sg": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mud Weight Sg"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        }
+      },
+      "title": "MudProgramme",
+      "type": "object"
+    },
+    "CasingSection": {
+      "additionalProperties": true,
+      "properties": {
+        "size_in": {
+          "title": "Size In",
+          "type": "number"
+        },
+        "setting_md_m": {
+          "title": "Setting Md M",
+          "type": "number"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        }
+      },
+      "required": [
+        "size_in",
+        "setting_md_m"
+      ],
+      "title": "CasingSection",
+      "type": "object"
+    },
+    "OperatingContext": {
+      "additionalProperties": true,
+      "properties": {
+        "pore_pressure_kpa": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pore Pressure Kpa"
+        },
+        "overbalance_kpa": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Overbalance Kpa"
+        },
+        "mud_weight_sg": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mud Weight Sg"
+        },
+        "stationary_exposure_h": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stationary Exposure H"
+        },
+        "permeability_md": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Permeability Md"
+        },
+        "gas_pct": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gas Pct"
+        },
+        "influx_volume_m3": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Influx Volume M3"
+        }
+      },
+      "title": "OperatingContext",
+      "type": "object"
+    },
+    "RuntimeWell": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ACTIVE",
+            "OFFSET"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "x_m": {
+          "title": "X M",
+          "type": "number"
+        },
+        "y_m": {
+          "title": "Y M",
+          "type": "number"
+        },
+        "crs": {
+          "title": "Crs",
+          "type": "string"
+        },
+        "datum": {
+          "title": "Datum",
+          "type": "string"
+        },
+        "survey": {
+          "items": {
+            "$ref": "#/$defs/SurveyStation"
+          },
+          "title": "Survey",
+          "type": "array"
+        },
+        "formations": {
+          "items": {
+            "$ref": "#/$defs/RuntimeFormation"
+          },
+          "title": "Formations",
+          "type": "array"
+        },
+        "mud_program": {
+          "$ref": "#/$defs/MudProgramme"
+        },
+        "casing_program": {
+          "items": {
+            "$ref": "#/$defs/CasingSection"
+          },
+          "title": "Casing Program",
+          "type": "array"
+        },
+        "held_out": {
+          "default": false,
+          "title": "Held Out",
+          "type": "boolean"
+        },
+        "coverage_expected": {
+          "default": false,
+          "title": "Coverage Expected",
+          "type": "boolean"
+        },
+        "structural_domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structural Domain"
+        },
+        "structural_quality": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structural Quality"
+        },
+        "pressure_context": {
+          "$ref": "#/$defs/OperatingContext"
+        },
+        "operating_context": {
+          "$ref": "#/$defs/OperatingContext"
+        },
+        "drilled_year": {
+          "anyOf": [
+            {
+              "maximum": 2200,
+              "minimum": 1850,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Drilled Year"
+        },
+        "drilling_technology": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Drilling Technology"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "field",
+        "status",
+        "x_m",
+        "y_m",
+        "crs",
+        "datum",
+        "survey",
+        "formations"
+      ],
+      "title": "RuntimeWell",
+      "type": "object"
+    },
+    "GroundedFieldSource": {
+      "additionalProperties": true,
+      "properties": {
+        "page": {
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "char_start": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Char Start"
+        },
+        "char_end": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Char End"
+        }
+      },
+      "required": [
+        "page",
+        "text"
+      ],
+      "title": "GroundedFieldSource",
+      "type": "object"
+    },
+    "NumericalField": {
+      "additionalProperties": true,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "measurement": {
+          "$ref": "#/$defs/Measurement"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        },
+        "requires_review": {
+          "default": false,
+          "title": "Requires Review",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value",
+        "measurement",
+        "source"
+      ],
+      "title": "NumericalField",
+      "type": "object"
+    },
+    "FormationMatch": {
+      "additionalProperties": true,
+      "properties": {
+        "raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw"
+        },
+        "basin": {
+          "title": "Basin",
+          "type": "string"
+        },
+        "formation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Formation Id"
+        },
+        "gazetteer_version": {
+          "title": "Gazetteer Version",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "method": {
+          "title": "Method",
+          "type": "string"
+        },
+        "requires_review": {
+          "title": "Requires Review",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "raw",
+        "basin",
+        "formation_id",
+        "gazetteer_version",
+        "confidence",
+        "method",
+        "requires_review"
+      ],
+      "title": "FormationMatch",
+      "type": "object"
+    },
+    "CauseType": {
+      "enum": [
+        "stated",
+        "inferred",
+        "unknown"
+      ],
+      "title": "CauseType",
+      "type": "string"
+    },
+    "ExtractionConfidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "title": "ExtractionConfidence",
+      "type": "string"
+    },
+    "RuntimeEvent": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "severity": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "MINOR",
+            "PARTIAL",
+            "MODERATE",
+            "SEVERE",
+            "TOTAL"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "md_to_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Md To M"
+        },
+        "event_md_interval_m": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Md Interval M"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "md_from_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Md From M"
+        },
+        "formation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Formation Id"
+        },
+        "cause_kind": {
+          "$ref": "#/$defs/CauseType",
+          "default": "unknown"
+        },
+        "operation_state": {
+          "$ref": "#/$defs/OperationState",
+          "default": "UNKNOWN"
+        },
+        "review_status": {
+          "$ref": "#/$defs/ReviewStatus",
+          "default": "NEEDS_REVIEW"
+        },
+        "extraction_confidence": {
+          "$ref": "#/$defs/ExtractionConfidence",
+          "default": "UNKNOWN"
+        },
+        "datum": {
+          "default": "UNKNOWN",
+          "title": "Datum",
+          "type": "string"
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Id"
+        },
+        "source_span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Span Id"
+        },
+        "symptom": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symptom"
+        },
+        "cause_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cause Text"
+        },
+        "mitigation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mitigation"
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outcome"
+        },
+        "original_value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Value"
+        },
+        "original_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Unit"
+        },
+        "depth_reference": {
+          "default": "UNKNOWN",
+          "title": "Depth Reference",
+          "type": "string"
+        },
+        "confidence": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "review_reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Review Reasons",
+          "type": "array"
+        },
+        "numerical_fields": {
+          "additionalProperties": {
+            "$ref": "#/$defs/NumericalField"
+          },
+          "title": "Numerical Fields",
+          "type": "object"
+        },
+        "context_values": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Context Values",
+          "type": "object"
+        },
+        "field_evidence": {
+          "additionalProperties": {
+            "$ref": "#/$defs/GroundedFieldSource"
+          },
+          "title": "Field Evidence",
+          "type": "object"
+        },
+        "formation_match": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FormationMatch"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "event_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Date"
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "event_type"
+      ],
+      "title": "RuntimeEvent",
+      "type": "object"
+    },
+    "LayoutRegion": {
+      "additionalProperties": true,
+      "properties": {
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "line_index": {
+          "title": "Line Index",
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "kind",
+        "line_index",
+        "source"
+      ],
+      "title": "LayoutRegion",
+      "type": "object"
+    },
+    "LayoutSection": {
+      "additionalProperties": true,
+      "properties": {
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "line_index": {
+          "title": "Line Index",
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "title",
+        "line_index",
+        "source"
+      ],
+      "title": "LayoutSection",
+      "type": "object"
+    },
+    "TableRow": {
+      "additionalProperties": true,
+      "properties": {
+        "cells": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Cells",
+          "type": "array"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "cells",
+        "source"
+      ],
+      "title": "TableRow",
+      "type": "object"
+    },
+    "TableColumn": {
+      "additionalProperties": true,
+      "properties": {
+        "index": {
+          "title": "Index",
+          "type": "integer"
+        },
+        "header": {
+          "title": "Header",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "index",
+        "header",
+        "reference",
+        "unit"
+      ],
+      "title": "TableColumn",
+      "type": "object"
+    },
+    "DetectedTable": {
+      "additionalProperties": true,
+      "properties": {
+        "headers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Headers",
+          "type": "array"
+        },
+        "depth_columns": {
+          "items": {
+            "$ref": "#/$defs/TableColumn"
+          },
+          "title": "Depth Columns",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/TableRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "headers",
+        "depth_columns",
+        "rows",
+        "source"
+      ],
+      "title": "DetectedTable",
+      "type": "object"
+    },
+    "PageLayout": {
+      "additionalProperties": true,
+      "properties": {
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/$defs/LayoutRegion"
+          },
+          "title": "Regions",
+          "type": "array"
+        },
+        "tables": {
+          "items": {
+            "$ref": "#/$defs/DetectedTable"
+          },
+          "title": "Tables",
+          "type": "array"
+        },
+        "method": {
+          "title": "Method",
+          "type": "string"
+        },
+        "headers": {
+          "items": {
+            "$ref": "#/$defs/LayoutRegion"
+          },
+          "title": "Headers",
+          "type": "array"
+        },
+        "sections": {
+          "items": {
+            "$ref": "#/$defs/LayoutSection"
+          },
+          "title": "Sections",
+          "type": "array"
+        }
+      },
+      "required": [
+        "version",
+        "regions",
+        "tables",
+        "method"
+      ],
+      "title": "PageLayout",
+      "type": "object"
+    },
+    "PageLine": {
+      "additionalProperties": true,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Bbox"
+        }
+      },
+      "required": [
+        "text",
+        "bbox"
+      ],
+      "title": "PageLine",
+      "type": "object"
+    },
+    "DocumentPage": {
+      "additionalProperties": true,
+      "properties": {
+        "page": {
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "is_scan": {
+          "title": "Is Scan",
+          "type": "boolean"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/PageLine"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "layout": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PageLayout"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "page",
+        "text",
+        "is_scan",
+        "confidence",
+        "lines"
+      ],
+      "title": "DocumentPage",
+      "type": "object"
+    },
+    "DateCoverage": {
+      "additionalProperties": true,
+      "properties": {
+        "date_from": {
+          "title": "Date From",
+          "type": "string"
+        },
+        "date_to": {
+          "title": "Date To",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/CoverageStatus"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "date_from",
+        "date_to",
+        "status",
+        "source"
+      ],
+      "title": "DateCoverage",
+      "type": "object"
+    },
+    "WellIdentity": {
+      "additionalProperties": true,
+      "properties": {
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        },
+        "matches_associated_well": {
+          "title": "Matches Associated Well",
+          "type": "boolean"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        }
+      },
+      "required": [
+        "raw",
+        "matches_associated_well",
+        "source"
+      ],
+      "title": "WellIdentity",
+      "type": "object"
+    },
+    "ExtractedDate": {
+      "additionalProperties": true,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/GroundedFieldSource"
+        },
+        "requires_review": {
+          "title": "Requires Review",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value",
+        "raw",
+        "source",
+        "requires_review"
+      ],
+      "title": "ExtractedDate",
+      "type": "object"
+    },
+    "RuntimeDocument": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "doc_type": {
+          "title": "Doc Type",
+          "type": "string"
+        },
+        "pages": {
+          "minimum": 0,
+          "title": "Pages",
+          "type": "integer"
+        },
+        "is_scan": {
+          "title": "Is Scan",
+          "type": "boolean"
+        },
+        "ocr_confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ocr Confidence",
+          "type": "number"
+        },
+        "review_status": {
+          "$ref": "#/$defs/ReviewStatus"
+        },
+        "event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "coverage_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Coverage Ids",
+          "type": "array"
+        },
+        "page_data": {
+          "items": {
+            "$ref": "#/$defs/DocumentPage"
+          },
+          "title": "Page Data",
+          "type": "array"
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Path"
+        },
+        "extractor_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extractor Version"
+        },
+        "classification": {
+          "default": "PRIVATE",
+          "enum": [
+            "PUBLIC",
+            "PRIVATE"
+          ],
+          "title": "Classification",
+          "type": "string"
+        },
+        "doc_type_source": {
+          "default": "UNKNOWN",
+          "enum": [
+            "DECLARED",
+            "CONTENT",
+            "UNKNOWN"
+          ],
+          "title": "Doc Type Source",
+          "type": "string"
+        },
+        "numerical_fields": {
+          "additionalProperties": {
+            "$ref": "#/$defs/NumericalField"
+          },
+          "title": "Numerical Fields",
+          "type": "object"
+        },
+        "date_coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DateCoverage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "date_coverages": {
+          "items": {
+            "$ref": "#/$defs/DateCoverage"
+          },
+          "title": "Date Coverages",
+          "type": "array"
+        },
+        "well_identity_status": {
+          "default": "UNKNOWN",
+          "enum": [
+            "MATCHED",
+            "MISMATCHED",
+            "UNKNOWN"
+          ],
+          "title": "Well Identity Status",
+          "type": "string"
+        },
+        "well_identity": {
+          "items": {
+            "$ref": "#/$defs/WellIdentity"
+          },
+          "title": "Well Identity",
+          "type": "array"
+        },
+        "dates": {
+          "items": {
+            "$ref": "#/$defs/ExtractedDate"
+          },
+          "title": "Dates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "title",
+        "doc_type",
+        "pages",
+        "is_scan",
+        "ocr_confidence",
+        "review_status",
+        "event_ids",
+        "coverage_ids"
+      ],
+      "title": "RuntimeDocument",
+      "type": "object"
+    },
+    "RuntimeCoverage": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "md_interval": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Md Interval"
+        },
+        "coverage_status": {
+          "$ref": "#/$defs/CoverageStatus"
+        },
+        "datum": {
+          "title": "Datum",
+          "type": "string"
+        },
+        "date_from": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date From"
+        },
+        "date_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date To"
+        },
+        "date_coverage_status": {
+          "$ref": "#/$defs/CoverageStatus",
+          "default": "UNKNOWN"
+        },
+        "date_source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GroundedFieldSource"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "document_id",
+        "page",
+        "md_interval",
+        "coverage_status",
+        "datum"
+      ],
+      "title": "RuntimeCoverage",
+      "type": "object"
+    },
+    "RuntimeSourceSpan": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Bbox"
+        },
+        "char_start": {
+          "title": "Char Start",
+          "type": "integer"
+        },
+        "char_end": {
+          "title": "Char End",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "document_id",
+        "page",
+        "text",
+        "bbox",
+        "char_start",
+        "char_end"
+      ],
+      "title": "RuntimeSourceSpan",
+      "type": "object"
+    },
+    "RuntimeTrajectory": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/SurveyStation"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "crs": {
+          "title": "Crs",
+          "type": "string"
+        },
+        "datum": {
+          "title": "Datum",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "points",
+        "crs",
+        "datum"
+      ],
+      "title": "RuntimeTrajectory",
+      "type": "object"
+    },
+    "RuntimeReview": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "kind": {
+          "enum": [
+            "event",
+            "coverage",
+            "document"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PENDING",
+            "RESOLVED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "title": "Priority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "entity_id",
+        "document_id",
+        "status",
+        "reason",
+        "priority"
+      ],
+      "title": "RuntimeReview",
+      "type": "object"
+    },
+    "Projection": {
+      "additionalProperties": true,
+      "properties": {
+        "decision": {
+          "enum": [
+            "PROJECTED",
+            "BLOCKED"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "projected_md_interval_m": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Projected Md Interval M"
+        },
+        "algorithm_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Algorithm Version"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "decision",
+        "projected_md_interval_m"
+      ],
+      "title": "Projection",
+      "type": "object"
+    },
+    "RuntimeAlignment": {
+      "additionalProperties": true,
+      "properties": {
+        "decision": {
+          "enum": [
+            "PROJECTED",
+            "BLOCKED"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "projected_md_interval_m": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Projected Md Interval M"
+        },
+        "algorithm_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Algorithm Version"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "active_well_id": {
+          "title": "Active Well Id",
+          "type": "string"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "source_span_id": {
+          "title": "Source Span Id",
+          "type": "string"
+        },
+        "computed_at": {
+          "format": "date-time",
+          "title": "Computed At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "projected_md_interval_m",
+        "id",
+        "event_id",
+        "active_well_id",
+        "formation",
+        "source_span_id",
+        "computed_at"
+      ],
+      "title": "RuntimeAlignment",
+      "type": "object"
+    },
+    "AnalogAssessment": {
+      "additionalProperties": true,
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "relevance": {
+          "title": "Relevance",
+          "type": "number"
+        },
+        "support": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "penalties": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Penalties",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blockers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "well_id",
+        "decision",
+        "relevance",
+        "support",
+        "penalties",
+        "unknowns",
+        "blockers"
+      ],
+      "title": "AnalogAssessment",
+      "type": "object"
+    },
+    "TransferAssessment": {
+      "additionalProperties": true,
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "relevance": {
+          "title": "Relevance",
+          "type": "number"
+        },
+        "support": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "penalties": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Penalties",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blockers",
+          "type": "array"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Document Id"
+        },
+        "source_span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Span Id"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        },
+        "projection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Projection"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "factors": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Factors",
+          "type": "object"
+        }
+      },
+      "required": [
+        "well_id",
+        "decision",
+        "relevance",
+        "support",
+        "penalties",
+        "unknowns",
+        "blockers",
+        "event_id",
+        "event_type",
+        "document_id",
+        "source_span_id",
+        "weight",
+        "projection",
+        "factors"
+      ],
+      "title": "TransferAssessment",
+      "type": "object"
+    },
+    "RuntimeTransfer": {
+      "additionalProperties": true,
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "relevance": {
+          "title": "Relevance",
+          "type": "number"
+        },
+        "support": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "penalties": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Penalties",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blockers",
+          "type": "array"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Document Id"
+        },
+        "source_span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Span Id"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        },
+        "projection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Projection"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "factors": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Factors",
+          "type": "object"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "computed_at": {
+          "format": "date-time",
+          "title": "Computed At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "well_id",
+        "decision",
+        "relevance",
+        "support",
+        "penalties",
+        "unknowns",
+        "blockers",
+        "event_id",
+        "event_type",
+        "document_id",
+        "source_span_id",
+        "weight",
+        "projection",
+        "factors",
+        "id",
+        "computed_at"
+      ],
+      "title": "RuntimeTransfer",
+      "type": "object"
+    },
+    "EvidenceRow": {
+      "additionalProperties": true,
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/EvidenceRole"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "analog": {
+          "$ref": "#/$defs/AnalogAssessment"
+        },
+        "transfers": {
+          "items": {
+            "$ref": "#/$defs/TransferAssessment"
+          },
+          "title": "Transfers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "well_id",
+        "role",
+        "weight",
+        "reason",
+        "analog",
+        "transfers"
+      ],
+      "title": "EvidenceRow",
+      "type": "object"
+    },
+    "EvidenceStatistics": {
+      "properties": {
+        "p_hat": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "P Hat"
+        },
+        "n_eff": {
+          "title": "N Eff",
+          "type": "number"
+        },
+        "sum_weights": {
+          "title": "Sum Weights",
+          "type": "number"
+        }
+      },
+      "required": [
+        "p_hat",
+        "n_eff",
+        "sum_weights"
+      ],
+      "title": "EvidenceStatistics",
+      "type": "object"
+    },
+    "RuntimeEvidence": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "active_well_id": {
+          "title": "Active Well Id",
+          "type": "string"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "risk": {
+          "$ref": "#/$defs/EventType"
+        },
+        "md_interval_m": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Md Interval M",
+          "type": "array"
+        },
+        "operation_state": {
+          "$ref": "#/$defs/OperationState"
+        },
+        "state": {
+          "$ref": "#/$defs/EvidenceState"
+        },
+        "sentence": {
+          "title": "Sentence",
+          "type": "string"
+        },
+        "support_count": {
+          "title": "Support Count",
+          "type": "integer"
+        },
+        "counter_count": {
+          "title": "Counter Count",
+          "type": "integer"
+        },
+        "unknown_count": {
+          "title": "Unknown Count",
+          "type": "integer"
+        },
+        "excluded_count": {
+          "title": "Excluded Count",
+          "type": "integer"
+        },
+        "internal_statistics": {
+          "$ref": "#/$defs/EvidenceStatistics"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "policy_version": {
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "context_source": {
+          "title": "Context Source",
+          "type": "string"
+        },
+        "computed_at": {
+          "format": "date-time",
+          "title": "Computed At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "active_well_id",
+        "formation",
+        "risk",
+        "md_interval_m",
+        "operation_state",
+        "state",
+        "sentence",
+        "support_count",
+        "counter_count",
+        "unknown_count",
+        "excluded_count",
+        "internal_statistics",
+        "rows",
+        "policy_version",
+        "context_source",
+        "computed_at"
+      ],
+      "title": "RuntimeEvidence",
+      "type": "object"
+    },
+    "ReplayFrame": {
+      "additionalProperties": true,
+      "properties": {
+        "elapsed_s": {
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "values": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "elapsed_s",
+        "values"
+      ],
+      "title": "ReplayFrame",
+      "type": "object"
+    },
+    "RuntimeDataset": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "frames": {
+          "items": {
+            "$ref": "#/$defs/ReplayFrame"
+          },
+          "title": "Frames",
+          "type": "array"
+        },
+        "frame_count": {
+          "title": "Frame Count",
+          "type": "integer"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "simulation": {
+          "title": "Simulation",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "frames",
+        "frame_count",
+        "source",
+        "simulation"
+      ],
+      "title": "RuntimeDataset",
+      "type": "object"
+    },
+    "StoredSample": {
+      "additionalProperties": true,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "quality_status": {
+          "default": "VALID",
+          "enum": [
+            "VALID",
+            "SUSPECT",
+            "MISSING"
+          ],
+          "title": "Quality Status",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "datum": {
+          "default": "UNKNOWN",
+          "title": "Datum",
+          "type": "string"
+        },
+        "reference": {
+          "default": "UNKNOWN",
+          "title": "Reference",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "timestamp"
+      ],
+      "title": "StoredSample",
+      "type": "object"
+    },
+    "QualityEvent": {
+      "properties": {
+        "cursor": {
+          "title": "Cursor",
+          "type": "integer"
+        },
+        "failures": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Failures",
+          "type": "object"
+        }
+      },
+      "required": [
+        "cursor",
+        "failures"
+      ],
+      "title": "QualityEvent",
+      "type": "object"
+    },
+    "RuntimeSession": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "episode_active": {
+          "default": true,
+          "title": "Episode Active",
+          "type": "boolean"
+        },
+        "playback_elapsed_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Playback Elapsed S"
+        },
+        "playing": {
+          "default": false,
+          "title": "Playing",
+          "type": "boolean"
+        },
+        "speed": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "title": "Speed",
+          "type": "number"
+        },
+        "generation": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Generation",
+          "type": "integer"
+        },
+        "wall_anchor": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wall Anchor"
+        },
+        "elapsed_anchor": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Elapsed Anchor"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "adapter": {
+          "enum": [
+            "REPLAY",
+            "MANUAL"
+          ],
+          "title": "Adapter",
+          "type": "string"
+        },
+        "dataset_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Dataset Id"
+        },
+        "cursor": {
+          "title": "Cursor",
+          "type": "integer"
+        },
+        "frame_count": {
+          "title": "Frame Count",
+          "type": "integer"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "md_interval_m": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Md Interval M",
+          "type": "array"
+        },
+        "radius_km": {
+          "title": "Radius Km",
+          "type": "number"
+        },
+        "epoch": {
+          "format": "date-time",
+          "title": "Epoch",
+          "type": "string"
+        },
+        "simulation": {
+          "title": "Simulation",
+          "type": "boolean"
+        },
+        "failures": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Failures",
+          "type": "object"
+        },
+        "quality_events": {
+          "items": {
+            "$ref": "#/$defs/QualityEvent"
+          },
+          "title": "Quality Events",
+          "type": "array"
+        },
+        "samples": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StoredSample"
+          },
+          "title": "Samples",
+          "type": "object"
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/ContextHistory"
+          },
+          "title": "History",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "well_id",
+        "adapter",
+        "dataset_id",
+        "cursor",
+        "frame_count",
+        "formation",
+        "md_interval_m",
+        "radius_km",
+        "epoch",
+        "simulation",
+        "failures",
+        "quality_events",
+        "samples",
+        "history"
+      ],
+      "title": "RuntimeSession",
+      "type": "object"
+    },
+    "RuntimeAlertAudit": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "event": {
+          "title": "Event",
+          "type": "string"
+        },
+        "actor": {
+          "title": "Actor",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "notified": {
+          "title": "Notified",
+          "type": "boolean"
+        },
+        "alert_id": {
+          "title": "Alert Id",
+          "type": "string"
+        },
+        "simulation_timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulation Timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "event",
+        "actor",
+        "timestamp",
+        "notified",
+        "alert_id"
+      ],
+      "title": "RuntimeAlertAudit",
+      "type": "object"
+    },
+    "AlertHistory": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "event": {
+          "title": "Event",
+          "type": "string"
+        },
+        "actor": {
+          "title": "Actor",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "notified": {
+          "title": "Notified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "event",
+        "actor",
+        "timestamp",
+        "notified"
+      ],
+      "title": "AlertHistory",
+      "type": "object"
+    },
+    "RuntimeAlert": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "session_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Session Ids",
+          "type": "array"
+        },
+        "restart_pending": {
+          "default": false,
+          "title": "Restart Pending",
+          "type": "boolean"
+        },
+        "session_id": {
+          "title": "Session Id",
+          "type": "string"
+        },
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "risk_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "md_interval_m": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Md Interval M",
+          "type": "array"
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/AlertLifecycle"
+        },
+        "evidence_state": {
+          "$ref": "#/$defs/EvidenceState"
+        },
+        "peak_state": {
+          "$ref": "#/$defs/EvidenceState"
+        },
+        "simulation": {
+          "title": "Simulation",
+          "type": "boolean"
+        },
+        "notification_count": {
+          "title": "Notification Count",
+          "type": "integer"
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/AlertHistory"
+          },
+          "title": "History",
+          "type": "array"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "snoozed_until": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Snoozed Until"
+        },
+        "resolved_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Resolved At"
+        },
+        "evidence_snapshot_id": {
+          "title": "Evidence Snapshot Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "well_id",
+        "risk_type",
+        "formation",
+        "md_interval_m",
+        "lifecycle",
+        "evidence_state",
+        "peak_state",
+        "simulation",
+        "notification_count",
+        "history",
+        "created_at",
+        "snoozed_until",
+        "resolved_at",
+        "evidence_snapshot_id"
+      ],
+      "title": "RuntimeAlert",
+      "type": "object"
+    },
+    "RuntimeSimulationAudit": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "session_id": {
+          "title": "Session Id",
+          "type": "string"
+        },
+        "channel": {
+          "title": "Channel",
+          "type": "string"
+        },
+        "quality": {
+          "title": "Quality",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "channel",
+        "quality",
+        "timestamp"
+      ],
+      "title": "RuntimeSimulationAudit",
+      "type": "object"
+    },
+    "RuntimeAudit": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "reviewer": {
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "before": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RuntimeEvent"
+            },
+            {
+              "$ref": "#/$defs/RuntimeCoverage"
+            },
+            {
+              "$ref": "#/$defs/RuntimeDocument"
+            }
+          ],
+          "title": "Before"
+        },
+        "after": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RuntimeEvent"
+            },
+            {
+              "$ref": "#/$defs/RuntimeCoverage"
+            },
+            {
+              "$ref": "#/$defs/RuntimeDocument"
+            }
+          ],
+          "title": "After"
+        }
+      },
+      "required": [
+        "id",
+        "timestamp",
+        "reviewer",
+        "action",
+        "entity_id",
+        "before",
+        "after"
+      ],
+      "title": "RuntimeAudit",
+      "type": "object"
+    },
+    "ReplayScore": {
+      "additionalProperties": true,
+      "properties": {
+        "alert_count": {
+          "minimum": 0,
+          "title": "Alert Count",
+          "type": "integer"
+        },
+        "hits": {
+          "minimum": 0,
+          "title": "Hits",
+          "type": "integer"
+        },
+        "misses": {
+          "minimum": 0,
+          "title": "Misses",
+          "type": "integer"
+        },
+        "false_alerts": {
+          "minimum": 0,
+          "title": "False Alerts",
+          "type": "integer"
+        },
+        "lead_distance_m": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Lead Distance M",
+          "type": "array"
+        },
+        "evaluated_frames": {
+          "minimum": 0,
+          "title": "Evaluated Frames",
+          "type": "integer"
+        },
+        "negative_case_count": {
+          "minimum": 0,
+          "title": "Negative Case Count",
+          "type": "integer"
+        },
+        "specificity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Specificity"
+        },
+        "accuracy": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accuracy"
+        }
+      },
+      "required": [
+        "alert_count",
+        "hits",
+        "misses",
+        "false_alerts",
+        "lead_distance_m",
+        "evaluated_frames",
+        "negative_case_count"
+      ],
+      "title": "ReplayScore",
+      "type": "object"
+    },
+    "HeldOutResult": {
+      "additionalProperties": true,
+      "properties": {
+        "well_id": {
+          "title": "Well Id",
+          "type": "string"
+        },
+        "risk": {
+          "$ref": "#/$defs/EventType"
+        },
+        "expected_event_count": {
+          "minimum": 0,
+          "title": "Expected Event Count",
+          "type": "integer"
+        },
+        "evidence_coverage_wells": {
+          "minimum": 0,
+          "title": "Evidence Coverage Wells",
+          "type": "integer"
+        },
+        "source_status": {
+          "default": "",
+          "title": "Source Status",
+          "type": "string"
+        },
+        "baselines": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ReplayScore"
+          },
+          "title": "Baselines",
+          "type": "object"
+        }
+      },
+      "required": [
+        "well_id",
+        "risk",
+        "expected_event_count",
+        "evidence_coverage_wells",
+        "baselines"
+      ],
+      "title": "HeldOutResult",
+      "type": "object"
+    },
+    "RuntimeValidationReport": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "synthetic_flag": {
+          "default": false,
+          "title": "Synthetic Flag",
+          "type": "boolean"
+        },
+        "measurements": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Measurement"
+          },
+          "title": "Measurements",
+          "type": "object"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "generated_at": {
+          "format": "date-time",
+          "title": "Generated At",
+          "type": "string"
+        },
+        "generator_version": {
+          "title": "Generator Version",
+          "type": "string"
+        },
+        "seed": {
+          "title": "Seed",
+          "type": "integer"
+        },
+        "input_sha256": {
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "repository_sha256": {
+          "default": "",
+          "title": "Repository Sha256",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/$defs/HeldOutResult"
+          },
+          "title": "Results",
+          "type": "array"
+        },
+        "policies": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Policies",
+          "type": "object"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "generated_at",
+        "generator_version",
+        "seed",
+        "input_sha256",
+        "results",
+        "policies",
+        "limitations"
+      ],
+      "title": "RuntimeValidationReport",
+      "type": "object"
+    },
+    "SecondaryIndicator": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "baseline": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Baseline"
+        },
+        "change": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Change"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "triggered": {
+          "title": "Triggered",
+          "type": "boolean"
+        },
+        "provenance_type": {
+          "const": "COMPUTED",
+          "title": "Provenance Type",
+          "type": "string"
+        },
+        "interpretation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Interpretation"
+        },
+        "formula": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Formula"
+        },
+        "inputs": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Inputs"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "available",
+        "triggered",
+        "provenance_type"
+      ],
+      "title": "SecondaryIndicator",
+      "type": "object"
+    },
+    "SecondaryModule": {
+      "additionalProperties": true,
+      "properties": {
+        "risk_type": {
+          "$ref": "#/$defs/EventType"
+        },
+        "maturity": {
+          "enum": [
+            "PARTIAL_DECISION_SUPPORT",
+            "CONSERVATIVE_INDICATORS",
+            "SUPPORTING_INDICATORS",
+            "HISTORICAL_PLANNING_ONLY"
+          ],
+          "title": "Maturity",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "HISTORICAL_PLANNING",
+            "CORROBORATING_INDICATORS",
+            "SIGNALS_FOR_REVIEW",
+            "CONTEXT_ONLY"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warning_allowed": {
+          "const": false,
+          "title": "Warning Allowed",
+          "type": "boolean"
+        },
+        "historical": {
+          "$ref": "#/$defs/RuntimeEvidence"
+        },
+        "operation_state": {
+          "title": "Operation State",
+          "type": "string"
+        },
+        "operation_bound": {
+          "title": "Operation Bound",
+          "type": "boolean"
+        },
+        "indicators": {
+          "items": {
+            "$ref": "#/$defs/SecondaryIndicator"
+          },
+          "title": "Indicators",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "simulation": {
+          "const": true,
+          "title": "Simulation",
+          "type": "boolean"
+        },
+        "algorithm_version": {
+          "title": "Algorithm Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "risk_type",
+        "maturity",
+        "status",
+        "warning_allowed",
+        "historical",
+        "operation_state",
+        "operation_bound",
+        "indicators",
+        "limitations",
+        "simulation",
+        "algorithm_version"
+      ],
+      "title": "SecondaryModule",
+      "type": "object"
+    },
+    "BaseSettings": {
+      "additionalProperties": false,
+      "description": "Base class for settings, allowing values to be overridden by environment variables.\n\nThis is useful in production for secrets you do not wish to save in code, it plays nicely with docker(-compose),\nHeroku and any 12 factor app design.\n\nAll the below attributes can be set via `model_config`.\n\nArgs:\n    _case_sensitive: Whether environment and CLI variable names should be read with case-sensitivity.\n        Defaults to `None`.\n    _nested_model_default_partial_update: Whether to allow partial updates on nested model default object fields.\n        Defaults to `False`.\n    _env_prefix: Prefix for all environment variables. Defaults to `None`.\n    _env_file: The env file(s) to load settings values from. Defaults to `Path('')`, which\n        means that the value from `model_config['env_file']` should be used. You can also pass\n        `None` to indicate that environment variables should not be loaded from an env file.\n    _env_file_encoding: The env file encoding, e.g. `'latin-1'`. Defaults to `None`.\n    _env_ignore_empty: Ignore environment variables where the value is an empty string. Default to `False`.\n    _env_nested_delimiter: The nested env values delimiter. Defaults to `None`.\n    _env_nested_max_split: The nested env values maximum nesting. Defaults to `None`, which means no limit.\n    _env_parse_none_str: The env string value that should be parsed (e.g. \"null\", \"void\", \"None\", etc.)\n        into `None` type(None). Defaults to `None` type(None), which means no parsing should occur.\n    _env_parse_enums: Parse enum field names to values. Defaults to `None.`, which means no parsing should occur.\n    _cli_prog_name: The CLI program name to display in help text. Defaults to `None` if _cli_parse_args is `None`.\n        Otherwise, defaults to sys.argv[0].\n    _cli_parse_args: The list of CLI arguments to parse. Defaults to None.\n        If set to `True`, defaults to sys.argv[1:].\n    _cli_settings_source: Override the default CLI settings source with a user defined instance. Defaults to None.\n    _cli_parse_none_str: The CLI string value that should be parsed (e.g. \"null\", \"void\", \"None\", etc.) into\n        `None` type(None). Defaults to _env_parse_none_str value if set. Otherwise, defaults to \"null\" if\n        _cli_avoid_json is `False`, and \"None\" if _cli_avoid_json is `True`.\n    _cli_hide_none_type: Hide `None` values in CLI help text. Defaults to `False`.\n    _cli_avoid_json: Avoid complex JSON objects in CLI help text. Defaults to `False`.\n    _cli_enforce_required: Enforce required fields at the CLI. Defaults to `False`.\n    _cli_use_class_docs_for_groups: Use class docstrings in CLI group help text instead of field descriptions.\n        Defaults to `False`.\n    _cli_exit_on_error: Determines whether or not the internal parser exits with error info when an error occurs.\n        Defaults to `True`.\n    _cli_prefix: The root parser command line arguments prefix. Defaults to \"\".\n    _cli_flag_prefix_char: The flag prefix character to use for CLI optional arguments. Defaults to '-'.\n    _cli_implicit_flags: Whether `bool` fields should be implicitly converted into CLI boolean flags.\n        (e.g. --flag, --no-flag). Defaults to `False`.\n    _cli_ignore_unknown_args: Whether to ignore unknown CLI args and parse only known ones. Defaults to `False`.\n    _cli_kebab_case: CLI args use kebab case. Defaults to `False`.\n    _secrets_dir: The secret files directory or a sequence of directories. Defaults to `None`.",
+      "properties": {},
+      "title": "BaseSettings",
+      "type": "object"
+    },
+    "MudLossPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "default": "mud-loss-gates/2.0",
+          "title": "Version",
+          "type": "string"
+        },
+        "lesson_distance_m": {
+          "default": 300,
+          "minimum": 0,
+          "title": "Lesson Distance M",
+          "type": "number"
+        },
+        "approach_distance_m": {
+          "default": 100,
+          "minimum": 0,
+          "title": "Approach Distance M",
+          "type": "number"
+        },
+        "flow_deficit_min_l_min": {
+          "default": 30,
+          "minimum": 0,
+          "title": "Flow Deficit Min L Min",
+          "type": "number"
+        },
+        "flow_deficit_fraction": {
+          "default": 0.05,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Flow Deficit Fraction",
+          "type": "number"
+        },
+        "flow_sustained_min_samples": {
+          "default": 3,
+          "minimum": 2,
+          "title": "Flow Sustained Min Samples",
+          "type": "integer"
+        },
+        "flow_sustained_min_s": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Flow Sustained Min S",
+          "type": "number"
+        },
+        "pit_drop_min_m3": {
+          "default": 0.5,
+          "exclusiveMinimum": 0,
+          "title": "Pit Drop Min M3",
+          "type": "number"
+        },
+        "trend_min_s": {
+          "default": 30,
+          "exclusiveMinimum": 0,
+          "title": "Trend Min S",
+          "type": "number"
+        },
+        "trend_max_s": {
+          "default": 120,
+          "exclusiveMinimum": 0,
+          "title": "Trend Max S",
+          "type": "number"
+        },
+        "acquisition_gap_max_s": {
+          "default": 30,
+          "exclusiveMinimum": 0,
+          "title": "Acquisition Gap Max S",
+          "type": "number"
+        },
+        "sample_skew_max_s": {
+          "default": 10,
+          "minimum": 0,
+          "title": "Sample Skew Max S",
+          "type": "number"
+        },
+        "ecd_max_difference_sg": {
+          "default": 0.15,
+          "exclusiveMinimum": 0,
+          "title": "Ecd Max Difference Sg",
+          "type": "number"
+        },
+        "ecd_similar_difference_sg": {
+          "default": 0.03,
+          "minimum": 0,
+          "title": "Ecd Similar Difference Sg",
+          "type": "number"
+        },
+        "ecd_weight_scale_sg": {
+          "default": 0.2,
+          "exclusiveMinimum": 0,
+          "title": "Ecd Weight Scale Sg",
+          "type": "number"
+        },
+        "ecd_weight_floor": {
+          "default": 0.4,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ecd Weight Floor",
+          "type": "number"
+        },
+        "mud_weight_tolerance_sg": {
+          "default": 0.15,
+          "exclusiveMinimum": 0,
+          "title": "Mud Weight Tolerance Sg",
+          "type": "number"
+        },
+        "hole_section_tolerance_in": {
+          "default": 0.5,
+          "minimum": 0,
+          "title": "Hole Section Tolerance In",
+          "type": "number"
+        },
+        "basis": {
+          "default": "Uncalibrated synthetic demonstration thresholds; not an operational alarm",
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "title": "MudLossPolicy",
+      "type": "object"
+    },
+    "HistoricalPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "default": "analog-evidence/2.1",
+          "title": "Version",
+          "type": "string"
+        },
+        "minimum_weight": {
+          "default": 0.08,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minimum Weight",
+          "type": "number"
+        },
+        "alpha": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Alpha",
+          "type": "number"
+        },
+        "beta": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Beta",
+          "type": "number"
+        },
+        "elevated_min_support": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Elevated Min Support",
+          "type": "integer"
+        },
+        "elevated_min_n_eff": {
+          "default": 3,
+          "minimum": 1,
+          "title": "Elevated Min N Eff",
+          "type": "number"
+        },
+        "elevated_min_p_hat": {
+          "default": 0.45,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Elevated Min P Hat",
+          "type": "number"
+        },
+        "threshold_basis": {
+          "default": "Uncalibrated prototype policy; requires backtesting and expert validation",
+          "title": "Threshold Basis",
+          "type": "string"
+        }
+      },
+      "title": "HistoricalPolicy",
+      "type": "object"
+    },
+    "Settings": {
+      "properties": {
+        "demo_mode": {
+          "default": false,
+          "title": "Demo Mode",
+          "type": "boolean"
+        },
+        "serve_frontend": {
+          "default": false,
+          "title": "Serve Frontend",
+          "type": "boolean"
+        },
+        "app_name": {
+          "default": "eRTMAC-NWIS API",
+          "title": "App Name",
+          "type": "string"
+        },
+        "environment": {
+          "default": "development",
+          "title": "Environment",
+          "type": "string"
+        },
+        "database_url": {
+          "default": "sqlite+pysqlite:///./nwis.db",
+          "title": "Database Url",
+          "type": "string"
+        },
+        "cors_origins": {
+          "default": "http://localhost:5173,http://127.0.0.1:5173",
+          "title": "Cors Origins",
+          "type": "string"
+        },
+        "channel_freshness_s": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Channel Freshness S",
+          "type": "object"
+        },
+        "mud_loss_policy": {
+          "$ref": "#/$defs/MudLossPolicy"
+        },
+        "historical_policy": {
+          "$ref": "#/$defs/HistoricalPolicy"
+        }
+      },
+      "title": "Settings",
+      "type": "object"
+    },
+    "AskRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "maxLength": 2000,
+          "minLength": 3,
+          "title": "Question",
+          "type": "string"
+        },
+        "active_well_id": {
+          "default": "SYN-ACTIVE-01",
+          "title": "Active Well Id",
+          "type": "string"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "formation": {
+          "default": "TIPAM",
+          "title": "Formation",
+          "type": "string"
+        },
+        "radius_km": {
+          "default": 3,
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "title": "Radius Km",
+          "type": "number"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "AskRequest",
+      "type": "object"
+    },
+    "QueryPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "intent": {
+          "enum": [
+            "WELL",
+            "FORMATION",
+            "EVENTS",
+            "OFFSETS",
+            "ALIGNMENT",
+            "EVIDENCE",
+            "MITIGATIONS",
+            "ALERTS",
+            "UNSUPPORTED"
+          ],
+          "title": "Intent",
+          "type": "string"
+        },
+        "well_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Well Ids",
+          "type": "array"
+        },
+        "active_well_id": {
+          "title": "Active Well Id",
+          "type": "string"
+        },
+        "formation": {
+          "title": "Formation",
+          "type": "string"
+        },
+        "risk_type": {
+          "title": "Risk Type",
+          "type": "string"
+        },
+        "event_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Id"
+        },
+        "md_interval_m": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Md Interval M"
+        },
+        "radius_km": {
+          "title": "Radius Km",
+          "type": "number"
+        },
+        "operation_state": {
+          "default": "DRILLING",
+          "title": "Operation State",
+          "type": "string"
+        },
+        "tools": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tools",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "limitation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Limitation"
+        }
+      },
+      "required": [
+        "intent",
+        "well_ids",
+        "active_well_id",
+        "formation",
+        "risk_type",
+        "radius_km",
+        "tools",
+        "assumptions"
+      ],
+      "title": "QueryPlan",
+      "type": "object"
+    },
+    "AnswerClaim": {
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "provenance_type": {
+          "enum": [
+            "FACT",
+            "COMPUTED",
+            "INFERRED"
+          ],
+          "title": "Provenance Type",
+          "type": "string"
+        },
+        "tool_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tool Ids",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "provenance_type"
+      ],
+      "title": "AnswerClaim",
+      "type": "object"
+    },
+    "GroundedAnswer": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ANSWERED",
+            "LIMITED",
+            "REFUSED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "plan": {
+          "$ref": "#/$defs/QueryPlan"
+        },
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/AnswerClaim"
+          },
+          "title": "Facts",
+          "type": "array"
+        },
+        "computed_pattern": {
+          "items": {
+            "$ref": "#/$defs/AnswerClaim"
+          },
+          "title": "Computed Pattern",
+          "type": "array"
+        },
+        "interpretation": {
+          "items": {
+            "$ref": "#/$defs/AnswerClaim"
+          },
+          "title": "Interpretation",
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "tool_calls": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Tool Calls",
+          "type": "array"
+        },
+        "numeric_verification": {
+          "additionalProperties": true,
+          "title": "Numeric Verification",
+          "type": "object"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "model_version": {
+          "const": "NONE_DETERMINISTIC_RENDERER",
+          "title": "Model Version",
+          "type": "string"
+        },
+        "generated_at": {
+          "title": "Generated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "question",
+        "plan",
+        "facts",
+        "computed_pattern",
+        "interpretation",
+        "gaps",
+        "sources",
+        "tool_calls",
+        "numeric_verification",
+        "version",
+        "model_version",
+        "generated_at"
+      ],
+      "title": "GroundedAnswer",
+      "type": "object"
+    },
+    "VerifyDraft": {
+      "additionalProperties": false,
+      "properties": {
+        "ask_run_id": {
+          "title": "Ask Run Id",
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/AnswerClaim"
+          },
+          "maxItems": 30,
+          "title": "Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ask_run_id",
+        "claims"
+      ],
+      "title": "VerifyDraft",
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-10-04T16:54:36.406041+00:00",
+  "fresh_extracted_package": true,
+  "python_on_path_required": false,
+  "installation_used_no_index": true,
+  "same_origin_frontend": true,
+  "stale_warning_blocked_at_md_m": 2480.0,
+  "ask_source_count": 2,
+  "engineering_tests": 131,
+  "reference_pages": 40,
+  "future_truth_not_served": true,
+  "start_script_sha256": "7c3b881a2ef9b2022297c70b7a732bef3ba0ad0dec54c776242d6eee136f0160"
+}

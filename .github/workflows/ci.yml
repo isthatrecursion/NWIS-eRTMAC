@@ -1,0 +1,33 @@
+name: Prototype checks
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: pip install -r backend/requirements.txt
+      - run: python -m ruff check app tests
+        working-directory: backend
+      - run: python -m app.export_contracts --check
+        working-directory: backend
+      - run: python -m pytest -q
+        working-directory: backend
+      - run: npm ci && npm run lint && npm run build
+        working-directory: frontend
+  clean-postgis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose -p nwis-ci up --build -d --wait --wait-timeout 300
+      - run: docker compose -p nwis-ci exec -T backend python -m app.smoke_postgis
+      - run: curl --fail http://localhost:8000/api/v1/wells && curl --fail http://localhost:5173
+      - if: always()
+        run: docker compose -p nwis-ci logs && docker compose -p nwis-ci down -v

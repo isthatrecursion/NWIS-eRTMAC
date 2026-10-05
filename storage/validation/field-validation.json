@@ -1,0 +1,9 @@
+{
+  "status": "PENDING_EXTERNAL_FIELD_DATA",
+  "production_claim_allowed": false,
+  "limitations": [
+    "No independently collected frozen predictions and revealed field truth were supplied"
+  ],
+  "generated_at": "2026-10-04T18:43:27.707600+00:00",
+  "manifest_id": "external-field-study-unassigned"
+}

@@ -1,0 +1,9 @@
+SYNTHETIC DAILY DRILLING REPORT
+Formation: Tipam
+Operation: DRILLING
+Datum: LOCAL_KB
+Coverage: 2200 m to 2580 m MD
+Mud weight: 1.16 sg
+ECD: 1.19 sg
+Hole size: 8.5 in
+No mud loss observed during the covered drilling interval.

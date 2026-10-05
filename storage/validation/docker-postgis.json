@@ -1,0 +1,33 @@
+{
+  "verified_at": "2026-10-04T23:48:05.9333012+05:30",
+  "project": "nwis-verify",
+  "clean_named_volumes": true,
+  "docker_desktop": "4.93.0",
+  "docker_engine": "29.8.1",
+  "docker_compose": "5.5.1",
+  "services": {
+    "db": "healthy",
+    "backend": "healthy",
+    "frontend": "healthy"
+  },
+  "database": {
+    "postgresql": "16",
+    "postgis": "3.4 USE_GEOS=1 USE_PROJ=1 USE_STATS=1",
+    "migration": "0001_foundation",
+    "trajectory_rows": 1,
+    "active_well_trajectory_points": 35
+  },
+  "seed": {
+    "wells": 24,
+    "documents": 12
+  },
+  "external_checks": {
+    "backend_health": "ok",
+    "backend_phase": "10",
+    "frontend_http_status": 200,
+    "frontend_root_present": true
+  },
+  "smoke_command": "docker compose -p nwis-verify exec -T backend python -m app.smoke_postgis",
+  "smoke_result": "Clean PostgreSQL/PostGIS smoke passed",
+  "scope": "Clean local Docker verification using isolated containers and newly created named volumes; not a production deployment certification"
+}

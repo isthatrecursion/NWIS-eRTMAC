@@ -1,0 +1,16 @@
+{
+  "id": "external-field-study-unassigned",
+  "site": "TO_BE_COMPLETED_BY_FIELD_PARTNER",
+  "data_classification": "PRIVATE",
+  "deidentified": true,
+  "predictions_frozen_at": null,
+  "truth_revealed_at": null,
+  "protocol_version": "field-validation/1.0",
+  "frozen_predictions": [],
+  "revealed_truth": [],
+  "review": {
+    "field_owner": null,
+    "independent_domain_reviewer": null,
+    "approval_reference": null
+  }
+}

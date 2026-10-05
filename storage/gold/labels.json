@@ -1,0 +1,598 @@
+{
+  "version": "curated-extraction-reference/1.0",
+  "annotation_method": "Curated reference labels authored independently of extractor outputs",
+  "independent_human_signoff": false,
+  "scope": "Synthetic authored pages; native text, scanned pages, feet, TVD, aliases, narratives and hard negatives",
+  "pages": [
+    {
+      "id": "GOLD-01",
+      "page": 1,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-01\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2438.4 m MD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 2438.4 m MD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-02",
+      "page": 2,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-02\nFormation: Tipam Sandstone\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 8000 ft MD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 8000 ft MD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-03",
+      "page": 3,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-03\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2450 m MD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": 2450.0,
+          "formation_id": "TIPAM",
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 2450 m MD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-04",
+      "page": 4,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-04\nFormation: Tippam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2480 m TVD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": null,
+          "formation_id": null,
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 2480 m TVD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-05",
+      "page": 5,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-05\nFormation: Barail\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2500 m MD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": 2500.0,
+          "formation_id": "BARAIL",
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 2500 m MD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-06",
+      "page": 6,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-06\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2520 m MD, severe mud loss observed.\nMitigation: LCM pill pumped.\nOutcome: Returns improved.\n",
+      "scanned": true,
+      "events": [
+        {
+          "event_type": "MUD_LOSS",
+          "md_from_m": 2520.0,
+          "formation_id": "TIPAM",
+          "mitigation": "LCM pill pumped.",
+          "outcome": "Returns improved.",
+          "source_quote": "At 2520 m MD, severe mud loss observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-07",
+      "page": 7,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-07\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2438.4 m MD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 2438.4 m MD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-08",
+      "page": 8,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-08\nFormation: Tipam Sandstone\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 8000 ft MD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 8000 ft MD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-09",
+      "page": 9,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-09\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2450 m MD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": 2450.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 2450 m MD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-10",
+      "page": 10,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-10\nFormation: Tippam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2480 m TVD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": null,
+          "formation_id": null,
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 2480 m TVD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-11",
+      "page": 11,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-11\nFormation: Barail\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2500 m MD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": 2500.0,
+          "formation_id": "BARAIL",
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 2500 m MD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-12",
+      "page": 12,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-12\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2520 m MD, stuck pipe observed.\nMitigation: Worked pipe within approved limits.\nOutcome: Pipe freed.\n",
+      "scanned": true,
+      "events": [
+        {
+          "event_type": "STUCK_PIPE",
+          "md_from_m": 2520.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Worked pipe within approved limits.",
+          "outcome": "Pipe freed.",
+          "source_quote": "At 2520 m MD, stuck pipe observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-13",
+      "page": 13,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-13\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2438.4 m MD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 2438.4 m MD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-14",
+      "page": 14,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-14\nFormation: Tipam Sandstone\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 8000 ft MD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 8000 ft MD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-15",
+      "page": 15,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-15\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2450 m MD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": 2450.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 2450 m MD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-16",
+      "page": 16,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-16\nFormation: Tippam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2480 m TVD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": null,
+          "formation_id": null,
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 2480 m TVD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-17",
+      "page": 17,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-17\nFormation: Barail\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2500 m MD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": 2500.0,
+          "formation_id": "BARAIL",
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 2500 m MD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-18",
+      "page": 18,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-18\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2520 m MD, influx observed.\nMitigation: Well shut in under approved procedure.\nOutcome: Pressures stabilized.\n",
+      "scanned": true,
+      "events": [
+        {
+          "event_type": "KICK",
+          "md_from_m": 2520.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Well shut in under approved procedure.",
+          "outcome": "Pressures stabilized.",
+          "source_quote": "At 2520 m MD, influx observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-19",
+      "page": 19,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-19\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2438.4 m MD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 2438.4 m MD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-20",
+      "page": 20,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-20\nFormation: Tipam Sandstone\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 8000 ft MD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 8000 ft MD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-21",
+      "page": 21,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-21\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2450 m MD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": 2450.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 2450 m MD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-22",
+      "page": 22,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-22\nFormation: Tippam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2480 m TVD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": null,
+          "formation_id": null,
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 2480 m TVD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-23",
+      "page": 23,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-23\nFormation: Barail\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2500 m MD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": 2500.0,
+          "formation_id": "BARAIL",
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 2500 m MD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-24",
+      "page": 24,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-24\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2520 m MD, stick slip observed.\nMitigation: Adjusted drilling parameters after review.\nOutcome: Torque stabilized.\n",
+      "scanned": true,
+      "events": [
+        {
+          "event_type": "TORQUE_DYSFUNCTION",
+          "md_from_m": 2520.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Adjusted drilling parameters after review.",
+          "outcome": "Torque stabilized.",
+          "source_quote": "At 2520 m MD, stick slip observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-25",
+      "page": 25,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-25\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2438.4 m MD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 2438.4 m MD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-26",
+      "page": 26,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-26\nFormation: Tipam Sandstone\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 8000 ft MD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": 2438.4,
+          "formation_id": "TIPAM",
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 8000 ft MD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-27",
+      "page": 27,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-27\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2450 m MD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": 2450.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 2450 m MD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-28",
+      "page": 28,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-28\nFormation: Tippam\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2480 m TVD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": null,
+          "formation_id": null,
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 2480 m TVD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-29",
+      "page": 29,
+      "text": "SYNTHETIC DAILY DRILLING REPORT\nDate: 2026-01-29\nFormation: Barail\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2500 m MD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": false,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": 2500.0,
+          "formation_id": "BARAIL",
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 2500 m MD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-30",
+      "page": 30,
+      "text": "SYNTHETIC WELL COMPLETION REPORT\nDate: 2026-01-30\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: CEMENTING\nCoverage: 2200 m to 2580 m MD\nMud weight: 9.8 ppg\nHole size: 8.5 in\nAt 2520 m MD, cementing failure observed.\nMitigation: Remedial squeeze performed.\nOutcome: Integrity reviewed.\n",
+      "scanned": true,
+      "events": [
+        {
+          "event_type": "CEMENTING_ISSUE",
+          "md_from_m": 2520.0,
+          "formation_id": "TIPAM",
+          "mitigation": "Remedial squeeze performed.",
+          "outcome": "Integrity reviewed.",
+          "source_quote": "At 2520 m MD, cementing failure observed."
+        }
+      ],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-31",
+      "page": 31,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nNo mud loss observed during the covered drilling interval.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-32",
+      "page": 32,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nNo stuck pipe observed during the covered drilling interval.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-33",
+      "page": 33,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nNo kick observed during the covered drilling interval.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-34",
+      "page": 34,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nNo torque dysfunction observed during the covered drilling interval.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-35",
+      "page": 35,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nNo cementing failure observed during the covered cementing interval.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-36",
+      "page": 36,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nAt 2450 m MD, check the kick contingency plan before drilling ahead.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-37",
+      "page": 37,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nAt 2460 m MD, discuss possible stuck pipe hazards at the planning meeting.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-38",
+      "page": 38,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nAt 2470 m MD, mud loss is a potential risk; none occurred on this shift.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-39",
+      "page": 39,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nAt 2480 m MD, stick slip is listed in the training manual, not observed here.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    },
+    {
+      "id": "GOLD-40",
+      "page": 40,
+      "text": "SYNTHETIC DAILY REPORT\nFormation: Tipam\nDatum: LOCAL_KB\nOperation: DRILLING\nAt 2490 m MD, cement loss contingency prepared; the cement job has not started.\n",
+      "scanned": false,
+      "events": [],
+      "label_review_status": "HUMAN_REVIEW_PENDING"
+    }
+  ]
+}

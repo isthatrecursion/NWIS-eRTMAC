@@ -1,0 +1,288 @@
+{
+  "id": "BENCHMARK-33b26a22e3f86aee885f",
+  "version": "blind-synthetic-benchmark/1.0",
+  "generated_at": "2026-10-04T15:55:20.563372+00:00",
+  "synthetic_flag": true,
+  "case_count": 8,
+  "positive_cases": 3,
+  "negative_cases": 5,
+  "drilled_m": 4400,
+  "prediction_sha256": "33b26a22e3f86aee885ff824c1f3ab57fbd88b948a0f27f158bab73addf04e53",
+  "truth_sha256": "9d9bdc05afa59b45960f433235a9bb51d757245bc4ce7cbdaffeb35ae6db3939",
+  "predictions_frozen_before_reveal": true,
+  "metrics": {
+    "nwis_warning": {
+      "alert_count": 3,
+      "hits": 2,
+      "misses": 1,
+      "false_negatives": 1,
+      "false_alerts": 1,
+      "alert_precision": 0.6666666666666666,
+      "severe_event_recall": 0.6666666666666666,
+      "lead_distance_m": [
+        10.0,
+        10.0
+      ],
+      "alerts_per_1000_m": 0.6818181818181818,
+      "projected_interval_overlap_iou": 0.3333333333333333,
+      "expected_event_count": 3
+    },
+    "surface_nearest": {
+      "alert_count": 8,
+      "hits": 3,
+      "misses": 0,
+      "false_negatives": 0,
+      "false_alerts": 5,
+      "alert_precision": 0.375,
+      "severe_event_recall": 1.0,
+      "lead_distance_m": [
+        140.0,
+        140.0,
+        140.0
+      ],
+      "alerts_per_1000_m": 1.8181818181818181,
+      "projected_interval_overlap_iou": 0.10000000000000002,
+      "expected_event_count": 3
+    },
+    "same_formation_equal": {
+      "alert_count": 8,
+      "hits": 3,
+      "misses": 0,
+      "false_negatives": 0,
+      "false_alerts": 5,
+      "alert_precision": 0.375,
+      "severe_event_recall": 1.0,
+      "lead_distance_m": [
+        90.0,
+        90.0,
+        90.0
+      ],
+      "alerts_per_1000_m": 1.8181818181818181,
+      "projected_interval_overlap_iou": 0.3333333333333333,
+      "expected_event_count": 3
+    },
+    "fixed_similarity": {
+      "alert_count": 8,
+      "hits": 3,
+      "misses": 0,
+      "false_negatives": 0,
+      "false_alerts": 5,
+      "alert_precision": 0.375,
+      "severe_event_recall": 1.0,
+      "lead_distance_m": [
+        90.0,
+        90.0,
+        90.0
+      ],
+      "alerts_per_1000_m": 1.8181818181818181,
+      "projected_interval_overlap_iou": 0.3333333333333333,
+      "expected_event_count": 3
+    },
+    "keyword_document": {
+      "alert_count": 8,
+      "hits": 3,
+      "misses": 0,
+      "false_negatives": 0,
+      "false_alerts": 5,
+      "alert_precision": 0.375,
+      "severe_event_recall": 1.0,
+      "lead_distance_m": [
+        290.0,
+        290.0,
+        290.0
+      ],
+      "alerts_per_1000_m": 1.8181818181818181,
+      "projected_interval_overlap_iou": 0.02631578947368421,
+      "expected_event_count": 3
+    }
+  },
+  "evidence_sufficiency_fraction": 1.0,
+  "source_coverage": {
+    "verified_offset_documents": 4,
+    "offset_wells": 4
+  },
+  "visual_case": {
+    "well_id": "SYN-BLIND-01",
+    "trace": [
+      {
+        "bit_md_m": 2050.0,
+        "timestamp": "2026-01-15T00:00:00Z",
+        "state": "NO_EVIDENCE",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2200.0,
+        "timestamp": "2026-01-15T00:00:10Z",
+        "state": "LESSON",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2250.0,
+        "timestamp": "2026-01-15T00:00:20Z",
+        "state": "LESSON",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2300.0,
+        "timestamp": "2026-01-15T00:00:30Z",
+        "state": "LESSON",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2350.0,
+        "timestamp": "2026-01-15T00:00:40Z",
+        "state": "LESSON",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2400.0,
+        "timestamp": "2026-01-15T00:00:50Z",
+        "state": "ELEVATED",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2430.0,
+        "timestamp": "2026-01-15T00:01:00Z",
+        "state": "ELEVATED",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2450.0,
+        "timestamp": "2026-01-15T00:01:10Z",
+        "state": "ELEVATED",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-e539094899d6138ac922"
+      },
+      {
+        "bit_md_m": 2460.0,
+        "timestamp": "2026-01-15T00:01:20Z",
+        "state": "ELEVATED",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c63f10735d405a163b4d"
+      },
+      {
+        "bit_md_m": 2470.0,
+        "timestamp": "2026-01-15T00:01:30Z",
+        "state": "ELEVATED",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-083019e4a3c040296489"
+      },
+      {
+        "bit_md_m": 2480.0,
+        "timestamp": "2026-01-15T00:01:40Z",
+        "state": "WARNING",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": true,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2490.0,
+        "timestamp": "2026-01-15T00:01:50Z",
+        "state": "WARNING",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": true,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2500.0,
+        "timestamp": "2026-01-15T00:02:00Z",
+        "state": "WARNING",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": true,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2510.0,
+        "timestamp": "2026-01-15T00:02:10Z",
+        "state": "WARNING",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": true,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2530.0,
+        "timestamp": "2026-01-15T00:02:20Z",
+        "state": "NO_EVIDENCE",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2580.0,
+        "timestamp": "2026-01-15T00:02:30Z",
+        "state": "NO_EVIDENCE",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      },
+      {
+        "bit_md_m": 2600.0,
+        "timestamp": "2026-01-15T00:02:40Z",
+        "state": "NO_EVIDENCE",
+        "historical_state": "ELEVATED",
+        "flow_quality": "FRESH",
+        "warning_allowed": false,
+        "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+      }
+    ],
+    "revealed_truth": [
+      {
+        "md_interval_m": [
+          2490,
+          2500
+        ],
+        "severity": "SEVERE"
+      }
+    ]
+  },
+  "rules": {
+    "mud_loss": "mud-loss-gates/2.0",
+    "evidence": "analog-evidence/2.1",
+    "baselines": {
+      "surface_nearest": "Nearest reviewed event wells, raw MD +/-50 m, 100 m approach",
+      "same_formation_equal": "Support fraction >=0.5, projected window within 100 m",
+      "fixed_similarity": "Static formation/hole/mud/ECD feature weights 0.4/0.25/0.2/0.15; weighted support fraction >=0.45, projected window within 100 m",
+      "keyword_document": "Literal mud-loss passage match; coverage interval, ignores negation"
+    }
+  },
+  "limitations": [
+    "Authored synthetic challenge cases, not independent field validation",
+    "Shared offset history and trajectories limit generalization",
+    "Baselines emit historical advisories; NWIS scoring counts corroborated Warnings",
+    "No secondary-risk predictor accuracy is claimed",
+    "Missing/stale sensors can create false negatives by design"
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "nwis_warning": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "alerts": [
+        {
+          "bit_md_m": 2480.0,
+          "window": [
+            2480.0,
+            2510.0
+          ],
+          "alert_id": "ALERT-f389acc26471a8cbc4ce",
+          "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-c3a6b2d8d27926a58ad0"
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "alerts": [
+        {
+          "bit_md_m": 2480.0,
+          "window": [
+            2480.0,
+            2510.0
+          ],
+          "alert_id": "ALERT-d3c7ec847f2f11e28e78",
+          "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-203afa6f88a895dc78f6"
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "alerts": []
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "alerts": []
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "alerts": []
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "alerts": [
+        {
+          "bit_md_m": 2480.0,
+          "window": [
+            2480.0,
+            2510.0
+          ],
+          "alert_id": "ALERT-e0b8737e5ad9c7bac5e4",
+          "evidence_snapshot_id": "EVIDENCE_SNAPSHOT-a534b56e663ebefa2adf"
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "alerts": []
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "alerts": []
+    }
+  ],
+  "surface_nearest": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "alerts": [
+        {
+          "bit_md_m": 2350.0,
+          "window": [
+            2440.0,
+            2540.0
+          ]
+        }
+      ]
+    }
+  ],
+  "same_formation_equal": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    }
+  ],
+  "fixed_similarity": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "alerts": [
+        {
+          "bit_md_m": 2400.0,
+          "window": [
+            2480.0,
+            2510.0
+          ]
+        }
+      ]
+    }
+  ],
+  "keyword_document": [
+    {
+      "well_id": "SYN-BLIND-01",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-02",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-03",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-04",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-05",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-06",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-07",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    },
+    {
+      "well_id": "SYN-BLIND-08",
+      "alerts": [
+        {
+          "bit_md_m": 2200.0,
+          "window": [
+            2200,
+            2580
+          ]
+        }
+      ]
+    }
+  ]
+}

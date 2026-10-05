@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vite/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+.env
+*.db
+*.sqlite3
+storage/documents/*
+!storage/documents/.gitkeep
+storage/runtime/
+storage/evaluation/
+*.tsbuildinfo
+storage/packaging/

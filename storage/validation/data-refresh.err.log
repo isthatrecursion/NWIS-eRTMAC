@@ -1,0 +1,279 @@
+INFO:     Started server process [38328]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8765 (Press CTRL+C to quit)
+{"request_id": "63a79bdf5e2c4b6cbd6d4a07669f9572", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 47.0}
+{"request_id": "3142e69b67af472daa315468b16a97ed", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 47.0}
+{"request_id": "96e00043d29f4a68b2f7290815f2a910", "method": "GET", "path": "/", "status": 200, "duration_ms": 94.0}
+{"request_id": "403c448da3c54440a4f771d739ddf662", "method": "GET", "path": "/", "status": 200, "duration_ms": 16.0}
+{"request_id": "19b04b48b6134b34a8d11bfe324201cc", "method": "GET", "path": "/assets/index-DScKQLku.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "4b85e7061b604dde82536b29f86d09c7", "method": "GET", "path": "/assets/index-CMDEwSfM.css", "status": 200, "duration_ms": 15.0}
+{"request_id": "f3b6d7b4b34743f38e2032b163e81eb8", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 32.0}
+{"request_id": "043e96507b85442ab0752cd5126ba6fb", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 47.0}
+{"request_id": "7c1a81d30f43455d9ddccee7aeaf4f7e", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 63.0}
+{"request_id": "6473c8ed2e014c36b914512fb7ea1b19", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 203.0}
+{"request_id": "69cb023afcdd4d0dbbbd60403df958db", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 0.0}
+{"request_id": "683042cf6b5a4148904bc00d7da11fbf", "method": "POST", "path": "/api/v1/replay/sessions/RUN-d1165ad789cd45f2abb6/evaluate", "status": 200, "duration_ms": 312.0}
+{"request_id": "cc997f4adfe84138af3b34db39b506d0", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 31.0}
+{"request_id": "dc6ced76b69149df9c8285bd265e0258", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 125.0}
+{"request_id": "1566595e05e744df9e4ef97e2e6cadef", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 125.0}
+{"request_id": "9bf4d7a1079f43c89c11dc4583ab8629", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 187.0}
+{"request_id": "6caed8ce482543448a415cae494e867c", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 172.0}
+{"request_id": "c5cdd5a896da4923a32bb1f3cf29edde", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 218.0}
+INFO:     ('127.0.0.1', 61698) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+INFO:     connection closed
+{"request_id": "a7a04241a1de41ce82ab0e9f82d30b99", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 0.0}
+{"request_id": "c28f163ee77e4e0db63c8740df491521", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 94.0}
+{"request_id": "882f92e381d345208503382ffc26252b", "method": "GET", "path": "/api/v1/documents/DOC-46ecb7568eeb8838913c/events", "status": 200, "duration_ms": 63.0}
+{"request_id": "23a129f1dbe94eaf95d4a2e65be4ae38", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/compare", "status": 200, "duration_ms": 344.0}
+{"request_id": "e9b79aa0878b47aebbe09b0dc952e6f5", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 16.0}
+{"request_id": "4234a358260044ac9d4e316c192d0d9c", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/lookahead", "status": 200, "duration_ms": 187.0}
+{"request_id": "8bdaecea203c4702a55e656f43aac894", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 0.0}
+{"request_id": "8ff8197347a1496f8de40b7e1d92a199", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 203.0}
+INFO:     ('127.0.0.1', 54543) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+INFO:     connection closed
+{"request_id": "8d96cdb22f24426c89d7743620e002b7", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 62.0}
+{"request_id": "56c5a3606e864910bf97f1cf2e3a3933", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 78.0}
+{"request_id": "ae82211c150a48c48370d3a2bb0785c0", "method": "GET", "path": "/api/v1/documents/DOC-438fb21c87654f09e67a/events", "status": 200, "duration_ms": 16.0}
+{"request_id": "3253c2a743274d179adbc9a80cb266fb", "method": "GET", "path": "/api/v1/documents/DOC-438fb21c87654f09e67a/pages/1", "status": 200, "duration_ms": 16.0}
+{"request_id": "3c630b898a074cd2966871de8a43c203", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-OFFSET-3/coverage", "status": 200, "duration_ms": 16.0}
+{"request_id": "5250cec4b4044bce9868bea9f9539cfd", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 15.0}
+{"request_id": "69e59e1819be40b7a61d6a8e15f1930e", "method": "GET", "path": "/api/v1/review", "status": 200, "duration_ms": 15.0}
+{"request_id": "174d1dea25714869a97c2a16fee27a05", "method": "GET", "path": "/api/v1/validation/usability", "status": 200, "duration_ms": 0.0}
+{"request_id": "36217d2efcc9448eb262b4e48d1f1dd7", "method": "GET", "path": "/api/v1/validation/hardening", "status": 200, "duration_ms": 31.0}
+{"request_id": "20dcdf211eac40deafc8c36f8e32f6fc", "method": "GET", "path": "/api/v1/validation/gold/pages", "status": 200, "duration_ms": 47.0}
+{"request_id": "fe6b7f14fd1d4f2cadcc5d988cd0f242", "method": "GET", "path": "/api/v1/validation/results", "status": 200, "duration_ms": 16.0}
+{"request_id": "08baf017759a4b71920d24102343fb69", "method": "GET", "path": "/api/v1/validation/gold/pages/1/image", "status": 200, "duration_ms": 172.0}
+{"request_id": "d5d815b3315e40ef89a850c9891771fc", "method": "GET", "path": "/api/v1/validation/external-status", "status": 200, "duration_ms": 203.0}
+{"request_id": "b5852c8fe08f490db92bce825a7ac6f5", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 32.0}
+{"request_id": "b6d697f56c21485a8bb9486ea0119011", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 110.0}
+{"request_id": "5fd622c0e638460396b339c7bdabb27c", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 110.0}
+{"request_id": "66c5e4bc33f2467c845b83411b9cb3e4", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 110.0}
+{"request_id": "ce0e2577b24e4575951f3c34c7dbf369", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 110.0}
+{"request_id": "28cc3f9a2d1c4229bb9b8fe1ccb19fb2", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 15.0}
+{"request_id": "a89bc49a63694d1fad337f1aea17ebe1", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 94.0}
+{"request_id": "b89ee171ec9b498c9f80f8cc687d272c", "method": "GET", "path": "/api/v1/documents/DOC-438fb21c87654f09e67a/pages/1", "status": 200, "duration_ms": 62.0}
+{"request_id": "991a4f60e29648c891e8751ccc343838", "method": "GET", "path": "/api/v1/documents/DOC-438fb21c87654f09e67a/events", "status": 200, "duration_ms": 16.0}
+{"request_id": "def068007227402fb3aab0b95e2cbaa1", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-OFFSET-3/coverage", "status": 200, "duration_ms": 47.0}
+{"request_id": "0c2aad1aaf764757b165dbc484bebaf5", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 16.0}
+{"request_id": "5c87bcee0dcf4278a2fcc8019860d0b6", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 63.0}
+{"request_id": "fe7fc458278849a3ad11219a81f2176c", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 109.0}
+{"request_id": "2ba1d97207554a0386f04a5057beaac8", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 109.0}
+{"request_id": "4d64b74ef39442f2a9702f9b45485332", "method": "GET", "path": "/", "status": 200, "duration_ms": 31.0}
+{"request_id": "87c81669552949c4987b7aa0f676d60e", "method": "GET", "path": "/assets/index-CS7baz9_.js", "status": 200, "duration_ms": 31.0}
+{"request_id": "87a62072bf6a4131a0111a90776d6a54", "method": "GET", "path": "/assets/index-CMDEwSfM.css", "status": 200, "duration_ms": 16.0}
+{"request_id": "48666d4c9e0c42a9a2aeb240329716ba", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 16.0}
+{"request_id": "3fcee83f21d247d18194ded74ecaf2cb", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 47.0}
+{"request_id": "137c01133ae447a6a313f1e4c35f258b", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 47.0}
+{"request_id": "eb08daf37d9c4238a0f8c9af116d148d", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 94.0}
+{"request_id": "0236fbe6262f4c4da13ba2a1db128446", "method": "GET", "path": "/", "status": 200, "duration_ms": 16.0}
+{"request_id": "26b67b8c6a9d4d3d88594a66d66dc77e", "method": "GET", "path": "/assets/index-CV1qX9OS.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "568a652d94f14ad9a7703e2fd8fa5dbf", "method": "GET", "path": "/assets/index-CMDEwSfM.css", "status": 200, "duration_ms": 15.0}
+{"request_id": "cbc62786df71413990eb1fe0f0482b41", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 15.0}
+{"request_id": "a5de3dcbde734130b8075fc4a4b07f77", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 15.0}
+{"request_id": "9acaf50a16ce40b1b7edfe7ef9e6c6a1", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 343.0}
+{"request_id": "70fcf80ccc334aa393aea0a5762b82b3", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 343.0}
+{"request_id": "283e106b36024ceaa8d3859802f0d6dd", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "4dd312e6613045f6b548b4370557af80", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 0.0}
+{"request_id": "de1e7231f8be43f6ae0a57fe2360f7d8", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 16.0}
+{"request_id": "215cad6c6700428d85eb5e86fe62a095", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 62.0}
+{"request_id": "a8567f0c601b496391a4c4cc87fae1c5", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 188.0}
+INFO:     ('127.0.0.1', 63454) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "4e01668ff4204545b6153c61c8bd32d9", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 625.0}
+{"request_id": "075260e3aef648efb6f3636f1d3cd63b", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 625.0}
+INFO:     connection closed
+{"request_id": "4e6c33e8421c4b33b4d25eca68397148", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 16.0}
+{"request_id": "ac0c7ba3237d446186dd5c5217bf3387", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "dae1ddfc07cb4470ae7aea4da5408010", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 188.0}
+INFO:     ('127.0.0.1', 65146) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+INFO:     connection closed
+{"request_id": "16bacf17b2114e818dd833038fa6167e", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 16.0}
+{"request_id": "0313a7cf60e14d03a1010b25088088e7", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 110.0}
+{"request_id": "4f0943bee2104ba2b9996f700b527400", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 156.0}
+INFO:     ('127.0.0.1', 57944) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "7776dcb4d4834fa780646a1e7106e182", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 578.0}
+{"request_id": "03df5ad046204be2a8c41fca23d80515", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 703.0}
+{"request_id": "d1577e98ee204dd392336b9467b898a2", "method": "GET", "path": "/", "status": 200, "duration_ms": 0.0}
+INFO:     connection closed
+{"request_id": "bf88102890364407be9ce3ae3569fc74", "method": "GET", "path": "/assets/index-Crz3E3mt.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "d2d0bb3d63374e2da3852c2288bcf598", "method": "GET", "path": "/assets/index-yWbpGv_Q.css", "status": 200, "duration_ms": 15.0}
+{"request_id": "5abb9da92b1b408196357282f48ec2fe", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 32.0}
+{"request_id": "15cad9182e544cffa74815d9a35570a6", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 63.0}
+{"request_id": "0b9d1ab2566d46edba97709a0758de54", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 234.0}
+INFO:     ('127.0.0.1', 59351) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "33d5be721b3a45eeb4c8445fecb78185", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 1890.0}
+{"request_id": "3e178e1eb334411e960738c5b2c0308f", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 1687.0}
+INFO:     connection closed
+{"request_id": "c9a447e415d84841a3796d88c4db2083", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 32.0}
+{"request_id": "cb79bbd369504da185145b4fcbeab9fc", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 31.0}
+INFO:     ('127.0.0.1', 51831) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "939bd269d2bd4d378db30b21585d3a60", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 438.0}
+{"request_id": "588b67c076fa4867a043399f6a2bd8f1", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 438.0}
+{"request_id": "bc42665a519e4d2bb5241fb7e6a5e290", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 453.0}
+{"request_id": "4d3e4b87e17d4f5ca3796980509d3ede", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 453.0}
+{"request_id": "5d25bbabf1e44373a1816f95b768d59b", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 500.0}
+INFO:     connection closed
+{"request_id": "68ba5ea3a7cc46d78124cccdda4c15aa", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 0.0}
+{"request_id": "653065dde8294a5a9a83c3f3dd9d95dc", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 62.0}
+{"request_id": "abd42e937daf42229201aecbf2192eea", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 281.0}
+INFO:     ('127.0.0.1', 50171) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "79b09ce922d74228b06bbfd7bd890ddc", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 1500.0}
+{"request_id": "6e03c016775f4ee387057b9e536be320", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 1500.0}
+INFO:     connection closed
+{"request_id": "9f156a9018764aa4a94eb7b6dc0291cc", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 16.0}
+{"request_id": "0879527a9a524546a95e69455e34b37e", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 32.0}
+{"request_id": "faf842f85e004ca78284f951a3c8db76", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 110.0}
+{"request_id": "dd055d8085b646bbb69c8674a1a02fac", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 125.0}
+{"request_id": "d0e6a8dbfea34a71a7c515af0d57d1fd", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 32.0}
+{"request_id": "4fb8a8500f1349e9ad6818417f5a7c76", "method": "GET", "path": "/", "status": 200, "duration_ms": 0.0}
+{"request_id": "c438cbd416e64bbba840cd94e0bc8ff2", "method": "GET", "path": "/assets/index-BWe5hlAz.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "2886b0cba0754cf18730b697a1fc2477", "method": "GET", "path": "/assets/index-DYkByycN.css", "status": 200, "duration_ms": 15.0}
+{"request_id": "0a411badfcb54a48a353bc781eefe511", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 0.0}
+{"request_id": "85a11d05e6864b39869d192f83fb4c6a", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 31.0}
+{"request_id": "e8a54e527f3d48db9b1bffa53a7e089b", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 47.0}
+{"request_id": "83dd882e8f474df2a54bcb7286e47181", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 79.0}
+{"request_id": "705abb91444b413793673003a366b2a0", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 46.0}
+{"request_id": "409aa955c96a45fba04cecc6f559c266", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 16.0}
+{"request_id": "a7ed752bca8b4fa8b1e52c6964178ecb", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 32.0}
+{"request_id": "575f4a816e76457e860de6c3f5f47212", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 109.0}
+INFO:     ('127.0.0.1', 55036) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "c2d5da63c1334ec5b8c6ccc0ef4ce6b8", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 625.0}
+{"request_id": "7bd157ca3a73423ebd77d0a18e61eac6", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 796.0}
+INFO:     connection closed
+{"request_id": "d8e2dcb66447407988ed69d41bcb4d1b", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 16.0}
+{"request_id": "df48e4a1e88443608414d8816b12a95e", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 16.0}
+{"request_id": "f5048d7f317641bea83c17d83dfbf3f6", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 156.0}
+{"request_id": "5fb5cda4ae7c4a338855eb1de608551e", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 156.0}
+{"request_id": "8300955479324b63b686d71659379b16", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 32.0}
+{"request_id": "4a75a1f03d38475f84529d047aa91727", "method": "GET", "path": "/api/v1/validation/usability", "status": 200, "duration_ms": 62.0}
+{"request_id": "8c9c4b9d81df4c56bc37bcb7fe3ee9eb", "method": "GET", "path": "/api/v1/validation/results", "status": 200, "duration_ms": 62.0}
+{"request_id": "f712168f135c4bed9842b343b88bc7cd", "method": "GET", "path": "/api/v1/validation/gold/pages", "status": 200, "duration_ms": 109.0}
+{"request_id": "8c95c8c8597e48d6acdf9284170b97ee", "method": "GET", "path": "/api/v1/validation/hardening", "status": 200, "duration_ms": 109.0}
+{"request_id": "798a0a2bf2e645babd349a7b1198ac05", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 94.0}
+{"request_id": "121facef006845d7adc55a60c444b3e2", "method": "GET", "path": "/api/v1/validation/external-status", "status": 200, "duration_ms": 94.0}
+{"request_id": "9889164f2aac4e4b88d74251f747f55c", "method": "GET", "path": "/api/v1/validation/gold/pages/1/image", "status": 200, "duration_ms": 94.0}
+{"request_id": "795ddc3963af416a9eb90d8e68dbef0a", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 62.0}
+{"request_id": "e674e242f18c44a3aaa71a596c8ec669", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 62.0}
+{"request_id": "1ca5d098399244f28a6e94ee64b5c68f", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 78.0}
+{"request_id": "84ff668eaf37437f9de0f797b9c814ef", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 172.0}
+{"request_id": "02ad49e7c55e401ea24508cf13513c5e", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 94.0}
+{"request_id": "cb8b26d090be47b7a25493c25a3aad6b", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 172.0}
+{"request_id": "77654f5143a94333be7d25bcc33e27ec", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 141.0}
+INFO:     ('127.0.0.1', 62321) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "30666c09015d476a995c9cbff851e6df", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 203.0}
+{"request_id": "fe913d8705674384afbcb67303207478", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 312.0}
+{"request_id": "c00cee9c17a04032bc3625edb7c4790b", "method": "GET", "path": "/", "status": 200, "duration_ms": 0.0}
+INFO:     connection closed
+{"request_id": "364decf92cc848f4991259475fefc5b8", "method": "GET", "path": "/assets/index-BYcJQ_Ot.js", "status": 200, "duration_ms": 15.0}
+{"request_id": "71595b803fa44a0f87b3c8f2bfabb0cd", "method": "GET", "path": "/assets/index-DF9jykwH.css", "status": 200, "duration_ms": 15.0}
+{"request_id": "73fd7a6a3e71461da7381e74b081f185", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 31.0}
+{"request_id": "d8912fda98e942338a7cfcbd7521c358", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 47.0}
+INFO:     ('127.0.0.1', 62037) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+{"request_id": "c84f24ffec8d46c58de52226080524db", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 219.0}
+{"request_id": "356d8c0f8e2b43f4805d4277ad51fc63", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 235.0}
+{"request_id": "63970d6f26cc49399b4b4a4ad509d4c6", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 219.0}
+INFO:     connection open
+{"request_id": "cf84711741ce466c9f02d49969b9f604", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 250.0}
+{"request_id": "a497af2377094ac197dbdf33d9ec9483", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 297.0}
+{"request_id": "881848b36ed24af185218cd9235efdbe", "method": "GET", "path": "/", "status": 200, "duration_ms": 0.0}
+INFO:     connection closed
+{"request_id": "cd3255a5fee3421caeefd1fa21c25123", "method": "GET", "path": "/assets/index-6b2J1I7n.js", "status": 200, "duration_ms": 16.0}
+{"request_id": "9f1285e21f5647d1b9593e34bf26a3d8", "method": "GET", "path": "/assets/index-DF9jykwH.css", "status": 200, "duration_ms": 0.0}
+{"request_id": "ad801a1cd4f64a4caed0f7578fca0c79", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 16.0}
+{"request_id": "9657540987f943e7b737d3be33ffc880", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 172.0}
+{"request_id": "8c7df0a95dab4e6ead5878cf9d3052ea", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 203.0}
+{"request_id": "b4f144fe183e44aa8b2d92756bb92f92", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 266.0}
+INFO:     ('127.0.0.1', 51697) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+{"request_id": "f569fb250c5b4489ad32ac7e889ce0dc", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 531.0}
+INFO:     connection open
+{"request_id": "aade4f85a29147c4a3d4e8e95936be67", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 594.0}
+{"request_id": "c1b3a53a52de465abba05a88af8653b4", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 594.0}
+INFO:     connection closed
+{"request_id": "303b7e7d3f0c4b28a2d081493d3cab79", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 16.0}
+{"request_id": "5c049b42949e4b83bbdb3301168e6b6e", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 47.0}
+{"request_id": "d598962805ee4eeba06ab53316decf40", "method": "POST", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/evaluate", "status": 200, "duration_ms": 203.0}
+INFO:     ('127.0.0.1', 60353) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "f94ddc44ddbc44fcb63e5a4798d934aa", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/secondary", "status": 200, "duration_ms": 1593.0}
+{"request_id": "4a5023b84047442381b5ec9111c77e40", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a/brief", "status": 200, "duration_ms": 1593.0}
+INFO:     connection closed
+{"request_id": "5ff8d6fc3dbb478ca8bc61a4b305e438", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 32.0}
+{"request_id": "005f16439fe4412da6b9ad882a6d31f6", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 47.0}
+{"request_id": "bcab40f6106d483ca6124c172f66e6a5", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 94.0}
+{"request_id": "7613eb46168b428f946cb150bc047a8c", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 219.0}
+{"request_id": "f27d6bb89974484ba3fe037d1d98248d", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 219.0}
+{"request_id": "4337aad6b3484cadb79ccd0bbaf78451", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 79.0}
+{"request_id": "b03da32570b843b8ada4eadf79872d44", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 265.0}
+{"request_id": "e97be20961f24d999113df5952839b58", "method": "GET", "path": "/api/v1/demo/session", "status": 200, "duration_ms": 235.0}
+{"request_id": "84815414d4124786ac892fd64827e730", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 281.0}
+{"request_id": "7a2f59ab164d4c2fbcd16e410ac4f354", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 594.0}
+{"request_id": "4a3cff329cc84ef5bef89c04e77d1c86", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 297.0}
+{"request_id": "6cbd4c30f9774233a42c3a9526297416", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 109.0}
+{"request_id": "46139e3250654ed6b59a77549b5ca94e", "method": "GET", "path": "/api/v1/review", "status": 200, "duration_ms": 0.0}
+{"request_id": "ec9ec059f25e48deabcd0aa56825759f", "method": "GET", "path": "/api/v1/gazetteer", "status": 200, "duration_ms": 47.0}
+{"request_id": "ae5ac833436443e1b65126a1f817c524", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 438.0}
+{"request_id": "548c4cc0f663488ab6714487bf08c9f3", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/lookahead", "status": 200, "duration_ms": 765.0}
+{"request_id": "5e1cc3587ac249eaaca528c745822262", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 328.0}
+{"request_id": "c2e85bc7caca401d9bb482759cd653ef", "method": "GET", "path": "/api/v1/validation/results", "status": 200, "duration_ms": 16.0}
+{"request_id": "9edf58ff7ec64adbbc54b4077817c2c1", "method": "GET", "path": "/api/v1/validation/gold/pages", "status": 200, "duration_ms": 78.0}
+{"request_id": "22149dada2834e77805dbbf17914513e", "method": "GET", "path": "/api/v1/validation/usability", "status": 200, "duration_ms": 31.0}
+{"request_id": "87054a77b73c448bb8462a53a495749d", "method": "GET", "path": "/api/v1/validation/hardening", "status": 200, "duration_ms": 94.0}
+{"request_id": "85d81412e17f4b9180d71bd3a00f5110", "method": "GET", "path": "/api/v1/validation/external-status", "status": 200, "duration_ms": 78.0}
+{"request_id": "710c720f46374a419be5ac9dbed51fee", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 62.0}
+{"request_id": "5387373672674bf0b5fda4e524e08998", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 140.0}
+INFO:     ('127.0.0.1', 53484) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "51de35d40e2d418fba3dfc517a632171", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 578.0}
+{"request_id": "9a0aa2b752154c4caf0f2c256dd7ad29", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 625.0}
+{"request_id": "67f52877731b4c43aa76787df89b04e6", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 625.0}
+{"request_id": "d4e2f96f1d6c4e5c92fed841239f22b4", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 687.0}
+{"request_id": "8bfdbe32361d475a9aa1736c078aa71b", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 516.0}
+{"request_id": "30488c7836e04da0b4252f3712a68bfe", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/compare", "status": 200, "duration_ms": 1656.0}
+{"request_id": "61f4ad5724684e9e8b09216f9c13fc1b", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 47.0}
+{"request_id": "74accd7026954b6a9327d5f4d22e38db", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "5e5cbfd99b9f4277b5499969337a14c0", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "b1b56c7fa720458094269c0127bda235", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "860ba79fd12045888294736abd41d5d5", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 31.0}
+{"request_id": "353f21079e904cd79dbdaf52db89ac85", "method": "GET", "path": "/", "status": 200, "duration_ms": 16.0}
+INFO:     connection closed
+{"request_id": "6e38411150d04566a3b3e733dfa2465c", "method": "GET", "path": "/assets/index-CBExsSDD.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "1616d14d745e4fbeba1a479cf600905c", "method": "GET", "path": "/assets/index-DF9jykwH.css", "status": 200, "duration_ms": 16.0}
+{"request_id": "53d6880430054eb18edb844698611ff4", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 16.0}
+{"request_id": "f20d67ae98f641f690ba81fef250e82f", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 140.0}
+{"request_id": "4042f048b65e46848ba498f8d0a34bcb", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 156.0}
+{"request_id": "b4322da009d0459581e6ac1e96de8fd4", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 187.0}
+{"request_id": "f82da1784d474fab8d4961321b318a47", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 187.0}
+INFO:     ('127.0.0.1', 59040) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "b2004a5b4ab944a9be8609de80c655c7", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 438.0}
+{"request_id": "1060a3baa1a84350999835d13c89cb62", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 469.0}
+{"request_id": "15cd3a19a778409891c9e4a8f08ac1e9", "method": "GET", "path": "/", "status": 200, "duration_ms": 0.0}
+INFO:     connection closed
+{"request_id": "5e7042f627b944f8b74fb349fc7cec2e", "method": "GET", "path": "/assets/index-ClclqkHL.js", "status": 200, "duration_ms": 0.0}
+{"request_id": "dff95beea5c643b4838c614b8a2b6a2d", "method": "GET", "path": "/assets/index-CYWGHLDu.css", "status": 200, "duration_ms": 0.0}
+{"request_id": "65d0d5c007a540f59287a81942f849dd", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE", "status": 200, "duration_ms": 16.0}
+{"request_id": "10fff7693bc04c4fa67f746fde44a507", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 62.0}
+{"request_id": "bc2e15b276784054abf8b21d64125c02", "method": "GET", "path": "/api/v1/replay/sessions/RUN-2e62fd25990d4250957a", "status": 200, "duration_ms": 62.0}
+{"request_id": "29fb301d942147ecabf8e3066b769080", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/ranking-swap", "status": 200, "duration_ms": 156.0}
+INFO:     ('127.0.0.1', 57728) - "WebSocket /api/v1/replay/sessions/RUN-2e62fd25990d4250957a/stream" [accepted]
+INFO:     connection open
+{"request_id": "22c45d3fd3604e4480b4bfdcb11eab3b", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/analogs", "status": 200, "duration_ms": 500.0}
+{"request_id": "1d2d9aec01ee485980770d3faf27f208", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/offsets/at-depth", "status": 200, "duration_ms": 547.0}
+{"request_id": "1009e13ad3eb4bafbf3380fb290a25be", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 500.0}
+INFO:     connection closed
+{"request_id": "57b145fc8b3b4a2d8663fe578de8952b", "method": "GET", "path": "/api/v1/documents", "status": 200, "duration_ms": 31.0}
+{"request_id": "087435b1d7b1492790ecdd3bcddddadf", "method": "GET", "path": "/api/v1/wells", "status": 200, "duration_ms": 156.0}
+{"request_id": "e2bf8646d79f4efd9e36a12790e51a1f", "method": "GET", "path": "/api/v1/meta", "status": 200, "duration_ms": 140.0}
+{"request_id": "336c4fad0b584b719a35af5175340374", "method": "GET", "path": "/api/v1/documents/DOC-46ecb7568eeb8838913c/events", "status": 200, "duration_ms": 47.0}
+{"request_id": "525d395de86443b19acb2acd46925e21", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/survey", "status": 200, "duration_ms": 31.0}
+{"request_id": "d845c931e9a546979f2e97fb8bf758ec", "method": "GET", "path": "/api/v1/wells/SYN-DEMO-ACTIVE/compare", "status": 200, "duration_ms": 266.0}

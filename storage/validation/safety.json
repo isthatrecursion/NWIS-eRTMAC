@@ -1,0 +1,38 @@
+{
+  "id": "SAFETY-20261004184914",
+  "generated_at": "2026-10-04T18:49:14.557513+00:00",
+  "version": "engineering-assurance/1.0",
+  "checks": [
+    {
+      "name": "ingestion.py has no code-execution calls",
+      "passed": true,
+      "detail": "AST inspected; document extraction is local parsing/OCR with no tool or model agent"
+    },
+    {
+      "name": "document_intelligence.py has no code-execution calls",
+      "passed": true,
+      "detail": "AST inspected; document extraction is local parsing/OCR with no tool or model agent"
+    },
+    {
+      "name": "Stored sources remain in configured storage",
+      "passed": true,
+      "detail": "Resolved source paths checked; API reads reject paths outside configured storage"
+    },
+    {
+      "name": "No rig write-back integration",
+      "passed": true,
+      "detail": "Simulation-only APIs; architecture and route contract tests verify no actuation endpoints"
+    },
+    {
+      "name": "Local package avoids external model calls",
+      "passed": true,
+      "detail": "Ask planner, tools and renderer are deterministic; uploaded text cannot choose operations"
+    }
+  ],
+  "limitations": [
+    "Local prototype, not a penetration test or production security certification",
+    "Public/private classification is metadata, not multi-user authorization",
+    "Startup binds loopback; manual deployments need authentication, TLS and deployment review",
+    "No external model or rig integration is configured"
+  ]
+}

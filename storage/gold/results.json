@@ -1,0 +1,94 @@
+{
+  "id": "EXTRACTION-b238cc9eef1b14dc8550",
+  "version": "curated-extraction-reference/1.0",
+  "parser_version": "grounded-parser/2.1",
+  "generated_at": "2026-10-04T15:55:28.848845+00:00",
+  "synthetic_flag": true,
+  "page_count": 40,
+  "scanned_pages": 5,
+  "independent_human_signoff": false,
+  "event_types": {
+    "MUD_LOSS": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.8571428571428571,
+      "recall": 1.0
+    },
+    "STUCK_PIPE": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.8571428571428571,
+      "recall": 1.0
+    },
+    "KICK": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334
+    },
+    "TORQUE_DYSFUNCTION": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "CEMENTING_ISSUE": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.8571428571428571,
+      "recall": 1.0
+    }
+  },
+  "depth_accuracy": 0.96,
+  "depth_tolerance_m": 0.1,
+  "formation_correctness": 0.9666666666666667,
+  "mitigation_outcome_exact_match": 0.8666666666666667,
+  "source_span_grounding": 0.7575757575757576,
+  "requiring_review_fraction": 0.325,
+  "denominators": {
+    "expected_events": 30,
+    "predicted_events": 33,
+    "depth_fields": 25,
+    "mitigation_outcome_fields": 60
+  },
+  "failures": [
+    {
+      "page": 18,
+      "kind": "MISSED_EVENT",
+      "event_type": "KICK"
+    },
+    {
+      "page": 36,
+      "kind": "FALSE_POSITIVE",
+      "source_text": "At 2450 m MD, check the kick contingency plan before drilling ahead."
+    },
+    {
+      "page": 37,
+      "kind": "FALSE_POSITIVE",
+      "source_text": "At 2460 m MD, discuss possible stuck pipe hazards at the planning meeting."
+    },
+    {
+      "page": 38,
+      "kind": "FALSE_POSITIVE",
+      "source_text": "At 2470 m MD, mud loss is a potential risk; none occurred on this shift."
+    },
+    {
+      "page": 40,
+      "kind": "FALSE_POSITIVE",
+      "source_text": "At 2490 m MD, cement loss contingency prepared; the cement job has not started."
+    }
+  ],
+  "input_sha256": "f2fe001e426f24fb9757c575396d9b1da628a947437ab97c7868cda846f8f093",
+  "labels_sha256": "87b04f9b5508ec50b00496408c584d02ee17e615990b84afd9788842a211f2bb",
+  "limitations": [
+    "Reference annotations are curated synthetic authoring, not independently human-certified labels",
+    "Human sign-off is pending for the reference pages",
+    "Metrics do not estimate field-document performance",
+    "Source grounding uses exact normalized quote matching; bbox annotation remains pending"
+  ]
+}

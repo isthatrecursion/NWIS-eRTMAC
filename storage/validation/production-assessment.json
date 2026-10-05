@@ -1,0 +1,72 @@
+{
+  "id": "production-security-concurrency-local-v1",
+  "generated_at": "2026-10-04T18:43:27.279795+00:00",
+  "scope": "Local synthetic deployment; this is engineering evidence, not production certification",
+  "concurrency": {
+    "requests": 300,
+    "workers": 32,
+    "successes": 300,
+    "failures": 0,
+    "p50_ms": 596.53,
+    "p95_ms": 902.82,
+    "max_ms": 1079.33,
+    "errors": []
+  },
+  "write_concurrency": {
+    "requests": 60,
+    "workers": 8,
+    "successes": 60,
+    "failures": 0,
+    "p50_ms": 762.23,
+    "p95_ms": 856.02,
+    "max_ms": 929.63,
+    "errors": []
+  },
+  "concurrency_result": "PASS",
+  "production_readiness": "NOT_PRODUCTION_READY",
+  "positive_controls": [
+    "parameterized SQLAlchemy persistence",
+    "request correlation IDs",
+    "structured error envelopes",
+    "security response headers",
+    "upload size and type controls",
+    "no rig write-back",
+    "uploaded text has no tool access"
+  ],
+  "blockers": [
+    {
+      "id": "AUTHN_AUTHZ",
+      "status": "OPEN",
+      "detail": "No production identity, role or tenant authorization layer is implemented."
+    },
+    {
+      "id": "TLS_EDGE",
+      "status": "OPEN",
+      "detail": "TLS termination and managed certificates are deployment responsibilities and are not configured here."
+    },
+    {
+      "id": "SECRETS",
+      "status": "OPEN",
+      "detail": "Development Compose uses demo credentials; production must use an external secret provider."
+    },
+    {
+      "id": "RATE_LIMIT",
+      "status": "OPEN",
+      "detail": "No production rate limiting or abuse controls are implemented."
+    },
+    {
+      "id": "HA_BACKUP",
+      "status": "OPEN",
+      "detail": "Restore drills, database backups, failover and multi-instance coordination have not been validated."
+    },
+    {
+      "id": "SCA_PEN_TEST",
+      "status": "OPEN",
+      "detail": "Independent dependency scanning and penetration testing remain external activities."
+    }
+  ],
+  "limitations": [
+    "Load probe covers read endpoints and deterministic Ask audit writes on one local host",
+    "No destructive, stress-to-failure or internet-facing test was performed"
+  ]
+}
