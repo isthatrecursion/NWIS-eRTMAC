@@ -8,6 +8,7 @@ from .paths import DATA_ROOT
 
 
 def main():
+    DATA_ROOT.mkdir(parents=True, exist_ok=True)
     generate()
     from .gold_set import author as author_gold
     if not (DATA_ROOT/"gold"/"labels.json").exists():

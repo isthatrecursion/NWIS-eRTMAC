@@ -1,7 +1,13 @@
 from functools import lru_cache
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+import os
+from pathlib import Path
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def default_database_url() -> str:
+    return os.getenv("DATABASE_URL") or f"sqlite+pysqlite:///{(Path(os.getenv('NWIS_DATA_ROOT', '.')) / 'nwis.db').resolve().as_posix()}"
 
 
 class MudLossPolicy(BaseModel):
@@ -50,11 +56,21 @@ class Settings(BaseSettings):
     serve_frontend: bool = False
     app_name: str = "eRTMAC-NWIS API"
     environment: str = "development"
-    database_url: str = "sqlite+pysqlite:///./nwis.db"
+    database_url: str = Field(default_factory=default_database_url, validate_default=True)
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     channel_freshness_s: dict[str, float] = Field(default_factory=dict)
     mud_loss_policy: MudLossPolicy = Field(default_factory=MudLossPolicy)
     historical_policy: HistoricalPolicy = Field(default_factory=HistoricalPolicy)
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def use_installed_postgres_driver(cls, value: str) -> str:
+        value = value or default_database_url()
+        if value.startswith("postgres://"):
+            return value.replace("postgres://", "postgresql+psycopg://", 1)
+        if value.startswith("postgresql://"):
+            return value.replace("postgresql://", "postgresql+psycopg://", 1)
+        return value
 
     @model_validator(mode="after")
     def freshness(self):
